@@ -1,8 +1,59 @@
 ---
+import "../styles/global.css";
+import Layout from '../layouts/Layout.astro';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { Image } from "astro:assets";
+import imageOne from '../assets/art/45-Untitled.png';
+import imageTwo from '../assets/art/46-Untitled.png';
+import imageThree from '../assets/art/47-LA.001.png';
+import imageFour from '../assets/art/48-LA.002.png';
+import imageFive from '../assets/art/49-LA.003.png';
+import imageSix from '../assets/art/50-Untitled_.png';
+import imageSeven from '../assets/art/51-HansonKnows.png'
+import imageEight from '../assets/art/52-Intersection.png';
+import imageNine from '../assets/art/053-HONE.png';
+import imageTen from '../assets/art/054-Germ.png';
+import imageEleven from '../assets/art/055-OurFutureBright.png';
+import imageTwelve from '../assets/art/56-Uniform2023.png';
+import imageThirteen from '../assets/art/57-UnknownPortrait.png';
+import imageFourteen from '../assets/art/058-Infrastructure_.png';
+import imageFifteen from '../assets/art/059-AboutTheCat.png';
+import imageSixteen from '../assets/art/060-MJ5.png';
+import imageSeventeen from '../assets/art/062-BigMouth_.png';
+import imageEighteen from '../assets/art/063-Untitled_PS2025.png';
+import imageNineteen from '../assets/art/061-YBAlone.png';
+import imageTwenty from '../assets/art/Alpha-01@2x.png';
+import imageTwentyOne from '../assets/art/Alpha-02@2x.png';
+import imageTwentyTwo from '../assets/art/Alpha-03@2x.png';
+import imageTwentyThree from '../assets/art/Alpha-04@2x.png';
+import imageTwentyFour from '../assets/art/Alpha-05@2x.png';
+import imageTwentyFive from '../assets/art/Alpha-06@2x.png';
+import imageTwentySix from '../assets/art/Alpha-07@2x.png';
+import imageTwentySeven from '../assets/art/Alpha-08@2x.png';
+import imageTwentyEight from '../assets/art/Alpha-09b@2x.png';	
+import imageTwentyNine from '../assets/art/008.png';
+import imageThirty from '../assets/art/009.png';
+import imageThirtyOne from '../assets/art/011.png';
+import imageThirtyTwo from '../assets/art/012.png';
+import imageThirtyThree from '../assets/art/013.png';
+import imageThirtyFour from '../assets/art/PlusMinus-01.png';
+import imageThirtyFive from '../assets/art/PlusMinus-02.png';
+import imageThirtySix from '../assets/art/015.png';
+import imageThirtySeven from '../assets/art/016.png';
+import imageThirtyEight from '../assets/art/017.png';
+import imageThirtyNine from '../assets/art/018.png';
+import imageForty from '../assets/art/019.png';
+import imageFortyOne from '../assets/art/020.png';
+import imageFortyTwo from '../assets/art/021.png';
+import imageFortyThree from '../assets/art/ArtificialHumanity-01.png'
+import imageFortyFour from '../assets/art/ArtificialHumanity-02.png'
+import imageFortyFive from '../assets/art/ArtificialHumanity-03.png'
+import imageFortySix from '../assets/art/ArtificialHumanity-04.png'
+import imageFortySeven from '../assets/art/ArtificialHumanity-05.png'
+import imageFortyEight from '../assets/art/ArtificialHumanity-06.png'
 ---
 
 <!doctype html>
@@ -11,39 +62,83 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
+		<Layout>
+			<div class="container mx-auto p-8">
+				<div class="grid grid-cols-1 gap-8 mb-8">
+					<Image src={imageEight} width="4096" height="1714" alt="Untitled"></Image>
+				</div>
+				<!-- New Art -->
+				<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xxl:grid-cols-3 gap-8">
+					<Image src={imageOne} width="2048" height="2048" alt="Untitled"></Image>
+					<!-- <Image src={imageTwo} width="2048" height="2048" alt="Untitled"></Image> -->
+					<Image src={imageFive} width="2048" height="2048" alt="Untitled"></Image>
+					<Image src={imageThree} width="2048" height="2048" alt="Untitled"></Image>
+					<Image src={imageFour} width="2048" height="2048" alt="Untitled"></Image>
+					<Image src={imageSix} width="2048" height="2048" alt="Untitled"></Image>
+					<!-- <Image src={imageSeven} width="2048" height="2048" alt="Untitled"></Image> -->
+					<!-- <Image src={imageTen} width="2048" height="2048" alt="Untitled"></Image> -->
+					<Image src={imageEleven} width="2048" height="2048" alt="Untitled"></Image>
+				</div>
+				<div class="grid grid-cols-1 gap-8 mt-8 mb-8">
+					<Image src={imageNine} width="4096" height="1714" alt="Untitled"></Image>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+					<Image src={imageTwelve} width="2048" height="2048" alt="Untitled"></Image>
+					<Image src={imageThirteen} width="2048" height="2048" alt="Untitled"></Image>
+					<Image src={imageFourteen} width="2048" height="2048" alt="Untitled"></Image>
+					<Image src={imageFifteen} width="2048" height="2048" alt="Untitled"></Image>
+					<Image src={imageSixteen} width="2048" height="2048" alt="Untitled"></Image>
+					<Image src={imageSeventeen} width="2048" height="2048" alt="Untitled"></Image>
+					<Image src={imageEighteen} width="2048" height="2048" alt="Untitled"></Image>
+					<Image src={imageNineteen} width="2048" height="2048" alt="Untitled"></Image>
+				</div>
+				<div class="grid grid-cols-1 gap-8 mt-8 mb-8">
+					<Image src={imageTen} width="4096" height="1714" alt="Untitled"></Image>
+				</div>
+				<!-- Alphanumeric -->
+				<div class="grid grid-cols-1  md:grid-cols-2 gap-8 mb-8">
+					<Image src={imageTwenty} width="2732" height="1536" alt="Untitled"></Image>
+					<Image src={imageTwentyOne} width="2732" height="1536" alt="Untitled"></Image>
+					<Image src={imageTwentyTwo} width="2732" height="1536" alt="Untitled"></Image>
+					<!-- <Image src={imageTwentyThree} width="2732" height="1536" alt="Untitled"></Image> -->
+					<Image src={imageTwentyFour} width="2732" height="1536" alt="Untitled"></Image>
+					<!-- <Image src={imageTwentyFive} width="2732" height="1536" alt="Untitled"></Image> -->
+					<Image src={imageTwentySix} width="2732" height="1536" alt="Untitled" class="col-span-2"></Image>
+					<Image src={imageTwentySeven} width="2732" height="1536" alt="Untitled"></Image>
+					<Image src={imageTwentyEight} width="2732" height="1536" alt="Untitled"></Image>
+				</div>
+				<!-- Exit -->
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+					<Image src={imageTwentyNine} width="2048" height="2048" alt="Untitled"></Image>
+					<Image src={imageThirty} width="2048" height="2048" alt="Untitled"></Image>
+					<Image src={imageThirtyOne} width="2048" height="2048" alt="Untitled"></Image>
+					<Image src={imageThirtyTwo} width="2048" height="2048" alt="Untitled"></Image>
+					<Image src={imageThirtyThree} width="2048" height="2048" alt="Untitled"></Image>
+				</div>
+				<!-- +- -->
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+					<Image src={imageThirtyFour} width="1224" height="1584" alt="Untitled"></Image>
+					<Image src={imageThirtyFive} width="1224" height="1584" alt="Untitled"></Image>
+				</div>
+				<!-- omfg txt -->
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+					<Image src={imageThirtySix} width="2048" height="2048" alt="Untitled"></Image>
+					<Image src={imageThirtySeven} width="2048" height="2048" alt="Untitled"></Image>
+					<Image src={imageThirtyEight} width="2048" height="2048" alt="Untitled"></Image>
+					<Image src={imageThirtyNine} width="2048" height="2048" alt="Untitled"></Image>
+					<Image src={imageForty} width="2048" height="2048" alt="Untitled"></Image>
+					<Image src={imageFortyOne} width="2048" height="2048" alt="Untitled"></Image>
+					<Image src={imageFortyTwo} width="2048" height="2048" alt="Untitled"></Image>
+				</div>
+				<!-- Artificial Humanity -->
+				<!-- <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+					<Image src={imageFortyThree} width="1920" height="1080" alt="Artificial Humanity abstract graphic"></Image>
+					<Image src={imageFortyFour} width="1920" height="1080" alt="Artificial Humanity abstract graphic"></Image>
+					<Image src={imageFortyFive} width="1920" height="1080" alt="Artificial Humanity abstract graphic"></Image>
+					<Image src={imageFortySix} width="1920" height="1080" alt="Artificial Humanity abstract graphic"></Image>
+					<Image src={imageFortySeven} width="1920" height="1080" alt="Artificial Humanity abstract graphic"></Image>
+					<Image src={imageFortyEight} width="1920" height="1080" alt="Artificial Humanity abstract graphic"></Image>
+				</div> -->
+		</Layout>
 	</body>
 </html>

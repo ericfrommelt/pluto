@@ -1,0 +1,45 @@
+---
+import "../../styles/global.css";
+import Layout from '../../layouts/Layout.astro';
+import BaseHead from '../../components/BaseHead.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+
+import { Image } from "astro:assets";
+
+import imageFortyEight from '../assets/art/ArtificialHumanity-06.png';
+
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Layout>
+			<div class="container mx-auto p-8">
+				<div class="grid grid-cols-1 gap-8 mb-8 mt-16">
+					<h1 class="font-mono text-4xl">ART + GRAPHICS</h1>
+					<h1 class="font-mono text-4xl
+					">ERIC@ERICFROMMELT.COM</h1>
+				</div>
+				<div class="grid grid-cols-1 gap-8 mb-8">
+					<Image src={imageFortyEight} width="4096" height="1714" alt="Untitled"></Image>
+				</div>
+				<!-- New Art -->
+				<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xxl:grid-cols-3 gap-8">
+					<Image src={imageFortyEight} width="2048" height="2048" alt="Untitled"></Image>
+					<!-- <Image src={imageTwo} width="2048" height="2048" alt="Untitled"></Image> -->
+					<Image src={imageFortyEight} width="2048" height="2048" alt="Untitled"></Image>
+					<Image src={imageFortyEight} width="2048" height="2048" alt="Untitled"></Image>
+					<Image src={imageFortyEight} width="2048" height="2048" alt="Untitled"></Image>
+					<Image src={imageFortyEight} width="2048" height="2048" alt="Untitled"></Image>
+					<!-- <Image src={imageSeven} width="2048" height="2048" alt="Untitled"></Image> -->
+					<!-- <Image src={imageTen} width="2048" height="2048" alt="Untitled"></Image> -->
+					<Image src={imageFortyEight} width="2048" height="2048" alt="Untitled"></Image>
+				</div>
+				
+					
+		</Layout>
+	</body>
+</html>
