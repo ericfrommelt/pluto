@@ -1,0 +1,152 @@
+---
+import "../../styles/global.css";
+import Layout from '../../layouts/Layout.astro';
+import BaseHead from '../../components/BaseHead.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+
+import { Image } from "astro:assets";
+
+import imageFifty from '../../assets/illustration/5Automations_7-9-2018-01.png';
+import imageFiftyOne from '../../assets/illustration/5Automations_7-9-2018-02.png';
+import imageFiftyTwo from '../../assets/illustration/automationsspreads-1.png';
+import imageFiftyThree from '../../assets/illustration/automationsspreads-2.png';
+
+import imageFiftyFour from '../../assets/illustration/MarchOfTheModels-Print-2560.png';
+import imageFiftyFive from '../../assets/illustration/MarchOfTheModels-WEB.png';
+import imageFiftySix from '../../assets/illustration/MarchOfTheModelsWeb.png';
+
+import imageFiftySeven from '../../assets/illustration/citypages-get-cryphy-2x.png';
+import imageFiftyEight from '../../assets/illustration/citypages-get-cryphy-situ-2x.png';
+
+import imageFiftyNine from '../../assets/illustration/creative-computers-2x.png';
+import imageSixty from '../../assets/illustration/creative_computers_photo-1024x715.jpg';
+
+import imageSixtyOne from '../../assets/illustration/DataCenterGameTheory.png';
+
+import imageSixtyTwo from '../../assets/illustration/espn-numbers-shotlink-2x.png';
+import imageSixtyThree from '../../assets/illustration/espn-numbers-lakers-2x.png';
+import imageSixtyFour from '../../assets/illustration/ShotLink_Photo.jpg';
+import imageSixtyFive from '../../assets/illustration/numbers_lakers.jpg';
+
+import imageSixtySix from '../../assets/illustration/ExplainableAI.png';
+import imageSixtySeven from '../../assets/illustration/ExplainableAI_01-05-2021_Questionmarks.png';
+
+import imageSixtyEight from '../../assets/illustration/fortune-quant-junkies-2x.png';
+import imageSixtyNine from '../../assets/illustration/quant-junkies2.jpg';
+
+import imageSeventy from '../../assets/illustration/6G@2x.png';
+import imageSeventyOne from '../../assets/illustration/AI-General@2x.png';
+import imageSeventyTwo from '../../assets/illustration/AI-Image-Recognition@2x.png';
+import imageSeventyThree from '../../assets/illustration/Binary@2x.png';
+import imageSeventyFour from '../../assets/illustration/TelecomNetwork@2x.png';
+
+import imageSeventyFive from '../../assets/illustration/MoralityEconomics-PRINT.webp';
+import imageSeventySix from '../../assets/illustration/MoralityEconomics-WEB.png';
+
+import imageSeventySeven from '../../assets/illustration/TDF_2023-09-25TDF-01.png';
+import imageSeventyEight from '../../assets/illustration/TDF_2023-09-25TDF-02.png';
+import imageSeventyNine from '../../assets/illustration/TDF_2023-09-25TDF-03.png';
+import imageEighty from '../../assets/illustration/TDF_2023-09-25TDF-04.png';
+import imageEightyOne from '../../assets/illustration/TDF_2023-09-25TDF-05.png';
+import imageEightyTwo from '../../assets/illustration/TDF_2023-09-25TDF-06.png';
+import imageEightyThree from '../../assets/illustration/TDF_2023-09-25TDF-07.png';
+import imageEightyFour from '../../assets/illustration/TDF_2023-09-25TDF-08.png';
+import imageEightyFive from '../../assets/illustration/TDF_2023-09-25TDF-09.png';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Layout>
+			<div class="container mx-auto p-8">
+				<!-- March of the Models -->
+				<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xxl:grid-cols-2 gap-8 mb-8">
+					<Image src={imageFiftyFive} width="2656" height="1080" alt="March of the Models"></Image>
+				</div>
+				<div class="grid grid-cols-2 gap-8 mb-8">
+					<Image src={imageFiftyFour} width="2560" height="1752" alt="March of the Models"></Image>
+					<Image src={imageFiftySix} width="1471" height="1475" alt="March of the Models"></Image>
+				</div>
+
+				<!-- Reconnecting Morality -->
+				<div class="grid grid-cols-1 gap-8 mb-8">
+					<Image src={imageSeventySix} width="2656" height="1080" alt="Reconnecting Morality"></Image>
+				</div>
+
+				<!-- TDF -->
+			
+				<div class="grid grid-cols-2 gap-8 mb-8">
+					<Image src={imageSeventySeven} width="5448" height="2160" alt="TDF"></Image>
+					<Image src={imageSeventyEight} width="5448" height="2160" alt="TDF"></Image>
+					<Image src={imageSeventyNine} width="5448" height="2160" alt="TDF"></Image>
+					<Image src={imageEighty} width="5448" height="2160" alt="TDF"></Image>		
+					<Image src={imageEightyOne} width="5448" height="2160" alt="TDF"></Image>
+					<Image src={imageEightyTwo} width="5448" height="2160" alt="TDF"></Image>
+					<Image src={imageEightyThree} width="5448" height="2160" alt="TDF"></Image>
+					<Image src={imageEightyFour} width="5448" height="2160" alt="TDF"></Image>
+					<Image src={imageEightyFive} width="5448" height="2160" alt="TDF"></Image>
+					
+				</div>
+				<!-- Spectrum -->
+				<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xxl:grid-cols-2 gap-8 mb-8">
+					<Image src={imageSeventyTwo} width="2800" height="2100" alt="AI Image Recognition"></Image>
+				</div>
+				<div class="grid grid-cols-2 gap-8 mb-8">
+					<Image src={imageSeventy} width="2800" height="2100" alt="6G"></Image>
+					<Image src={imageSeventyOne} width="2800" height="2100" alt="AI"></Image>
+					<Image src={imageSeventyThree} width="2800" height="2100" alt="Binary"></Image>
+					<Image src={imageSeventyFour} width="2800" height="2100" alt="Telecom Network"></Image>
+				</div>
+
+				<!-- Five AI Automations -->
+				<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xxl:grid-cols-3 gap-8 mb-8">
+					<Image src={imageFifty} width="2560" height="1707" alt="Five AI Automations"></Image>
+					<Image src={imageFiftyOne} width="2560" height="1707" alt="Five AI Automations"></Image>
+					<Image src={imageFiftyTwo} width="1440" height="960" alt="Five AI Automations"></Image>
+					<Image src={imageFiftyThree} width="1440" height="960" alt="Five AI Automations"></Image>
+				</div>
+
+				<!-- City Pages -->
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xxl:grid-cols-2 gap-8 mb-8">
+					<Image src={imageFiftySeven} width="2560" height="2945" alt="City Pages"></Image>
+					<Image src={imageFiftyEight} width="2560" height="2945" alt="City Pages"></Image>
+				</div>
+
+				<!-- Creative Computers -->
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xxl:grid-cols-2 gap-8 mb-8">
+					<Image src={imageFiftyNine} width="2560" height="1851" alt="Creative Computers"></Image>
+					<Image src={imageSixty} width="1024" height="715" alt="Creative Computers"></Image>
+				</div>
+
+				<!-- Data Center Game Theory -->
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xxl:grid-cols-2 gap-8 mb-8">
+					<Image src={imageSixtyOne} width="2560" height="3354" alt="Game Theory in the Data Center"></Image>
+				</div>
+
+				<!-- ESPN Numbers -->
+				<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xxl:grid-cols-1 gap-8 mb-8">
+					<Image src={imageSixtyTwo} width="2560" height="893" alt="ESPN Numbers column"></Image>
+					<Image src={imageSixtyThree} width="2560" height="891" alt="ESPN Numbers column"></Image>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xxl:grid-cols-2 gap-8 mb-8">
+					<Image src={imageSixtyFour} width="1000" height="667" alt="ESPN Numbers column"></Image>
+					<Image src={imageSixtyFive} width="1000" height="667" alt="ESPN Numbers column"></Image>
+				</div>
+
+				<!-- Explainable AI -->
+				<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xxl:grid-cols-1 gap-8 mb-8">
+					<Image src={imageSixtySix} width="2560" height="1920" alt="Explainable AI"></Image>
+					<Image src={imageSixtySeven} width="2560" height="774" alt="Explainable AI - 4 question marks"></Image>
+				</div>
+
+				<!-- Quant Junkies -->
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xxl:grid-cols-2 gap-8 mb-8">
+					<Image src={imageSixtyEight} width="2560" height="2177" alt="Quant Junkies"></Image>
+					<Image src={imageSixtyNine} width="1000" height="1250" alt="Quant Junkies"></Image>
+				</div>
+			</Layout>
+	</body>
+</html>
