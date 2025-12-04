@@ -1,0 +1,178 @@
+---
+import "../../styles/global.css";
+import Layout from '../../layouts/Layout.astro';
+import BaseHead from '../../components/BaseHead.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+
+import { Image } from "astro:assets";
+import { Vimeo, YouTube } from 'astro-embed';
+
+// dtv
+import dtv01 from '../../assets/brand/dtv/CheckInfo.png';
+import dtv02 from '../../assets/brand/dtv/ChooseYourPackage.png';
+import dtv03 from '../../assets/brand/dtv/ComparePackages.png';
+import dtv04 from '../../assets/brand/dtv/ComparePackages.png';
+import dtv05 from '../../assets/brand/dtv/Confirmation.png';
+import dtv06 from '../../assets/brand/dtv/CreatePassword.png';
+import dtv07 from '../../assets/brand/dtv/LandingPage.png';
+import dtv08 from '../../assets/brand/dtv/UserJourney.png';
+
+// hpe
+import hpe01 from '../../assets/brand/hpe/CloudCliff.png';
+import hpe02 from '../../assets/brand/hpe/CyberCrimeWeb.png';
+import hpe03 from '../../assets/brand/hpe/GenomicBasics_Mobile.png';
+import hpe04 from '../../assets/brand/hpe/GenomicBasics.png';
+import hpe05 from '../../assets/brand/hpe/hpe_css.png';
+import hpe06 from '../../assets/brand/hpe/hpe_header.png';
+import hpe07 from '../../assets/brand/hpe/HPE_SocialTiles.png';
+import hpe08 from '../../assets/brand/hpe/hpe_vscode3.png';
+import hpe09 from '../../assets/brand/hpe/MaturityScape.png';
+import hpe10 from '../../assets/brand/hpe/PrepareHealthcareDelivery.png';
+
+
+// crea dev
+import cd01 from '../../assets/brand/creadev/CreaDev_Badge_Mockup_1.png';
+import cd02 from '../../assets/brand/creadev/CreaDev_Guidelines.png';
+import cd03 from '../../assets/brand/creadev/CreaDev_Poster_Mockup.png';
+import cd04 from '../../assets/brand/creadev/CreaDev_Site_Mockup.png';
+
+// jennair
+import JennAir01 from '../../assets/brand/jennair/JennAir-01.png';
+import JennAir02 from '../../assets/brand/jennair/JennAir-02.png';
+import JennAir03 from '../../assets/brand/jennair/JennAir-03.png';
+import JennAir04 from '../../assets/brand/jennair/JennAir-04.png';
+import JennAir05 from '../../assets/brand/jennair/JennAir-05.png';
+import JennAir06 from '../../assets/brand/jennair/JennAir-06.png';
+import JennAir07 from '../../assets/brand/jennair/JennAir-07.png';
+import JennAir08 from '../../assets/brand/jennair/JennAir-08.png';
+import JennAir09 from '../../assets/brand/jennair/JennAir-09.png';
+import JennAir10 from '../../assets/brand/jennair/JennAir-10.png';
+import JennAir11 from '../../assets/brand/jennair/JennAir-11.png';
+import JennAir12 from '../../assets/brand/jennair/JennAir-12.png';
+import JennAir13 from '../../assets/brand/jennair/JennAir-13.png';
+import JennAir14 from '../../assets/brand/jennair/JennAir-14.png';
+import JennAir15 from '../../assets/brand/jennair/JennAir-15.png';
+import JennAir16 from '../../assets/brand/jennair/JennAir-16.png';
+
+// Jackpot
+import jackpot01 from '../../assets/brand/mtv/Jackpot_01.png';
+import jackpot02 from '../../assets/brand/mtv/Jackpot_02.png';
+import jackpot03 from '../../assets/brand/mtv/Jackpot_03.png';
+import jackpot04 from '../../assets/brand/mtv/Jackpot_04.png';
+import jackpot05 from '../../assets/brand/mtv/Jackpot_05.png';
+import jackpot06 from '../../assets/brand/mtv/Jackpot_06.png';
+import jackpot07 from '../../assets/brand/mtv/Jackpot_07.png';
+import jackpot08 from '../../assets/brand/mtv/Jackpot_08.png';
+import jackpot09 from '../../assets/brand/mtv/Jackpot_09.png';
+
+
+import imageSeventySeven from '../../assets/illustration/TDF_2023-09-25TDF-01.png';
+import imageSeventyEight from '../../assets/illustration/TDF_2023-09-25TDF-02.png';
+import imageSeventyNine from '../../assets/illustration/TDF_2023-09-25TDF-03.png';
+import imageEighty from '../../assets/illustration/TDF_2023-09-25TDF-04.png';
+import imageEightyOne from '../../assets/illustration/TDF_2023-09-25TDF-05.png';
+import imageEightyTwo from '../../assets/illustration/TDF_2023-09-25TDF-06.png';
+import imageEightyThree from '../../assets/illustration/TDF_2023-09-25TDF-07.png';
+import imageEightyFour from '../../assets/illustration/TDF_2023-09-25TDF-08.png';
+import imageEightyFive from '../../assets/illustration/TDF_2023-09-25TDF-09.png';
+
+
+import gpu01 from '../../assets/motion/GPUUUUU_01.png';
+import gpu02 from '../../assets/motion/GPUUUUU_02.png';
+import gpu03 from '../../assets/motion/GPUUUUU_03.png';
+import gpu04 from '../../assets/motion/GPUUUUU_04.png';
+import gpu05 from '../../assets/motion/GPUUUUU_05.png';
+import gpu06 from '../../assets/motion/GPUUUUU_06.png';
+import gpu07 from '../../assets/motion/GPUUUUU_07.png';
+import gpu08 from '../../assets/motion/GPUUUUU_08.png';
+import gpu09 from '../../assets/motion/GPUUUUU_09.png';
+import gpu10 from '../../assets/motion/GPUUUUU_10.png';
+import gpu11 from '../../assets/motion/GPUUUUU_11.png';
+import gpu12 from '../../assets/motion/GPUUUUU_12.png';
+import gpu13 from '../../assets/motion/GPUUUUU_13.png';
+
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Layout>
+			<div class="container mx-auto p-8">
+				<!-- crea.dev -->
+				<div class="my-32">
+					<p class="my-8">
+						Visual Identity for a technology event
+					</p>
+					<div class="grid grid-cols-1 gap-8 mb-8">
+						<Image src={cd04} width="5700" height="4000" alt="crea.dev website mockup"></Image>
+					</div>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+						<Image src={cd01} width="2625" height="2625" alt="crea.dev badge mockup"></Image>
+						<Image src={cd03} width="3200" height="3200" alt="crea.dev poster mockup"></Image>
+						<Image src={cd02} width="2300" height="1440" alt="crea.dev brand guidelines"></Image>
+					</div>
+				 </div>
+
+				<!-- dtv -->
+				<div class="my-32">
+					<p class="my-8">
+						In app purchase flow design + prototyping<br />
+						DirecTv
+					</p>
+					<div class="grid grid-cols-1 gap-8 mb-8">
+						<Image src={dtv07} width="1920" height="1080" alt="dtv landing page"></Image>
+						<Image src={dtv08} width="1920" height="1080" alt="dtv user journey"></Image>
+					</div>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+						<Image src={dtv02} width="1920" height="1080" alt="step 2"></Image>
+						<Image src={dtv04} width="1920" height="1080" alt="step 4"></Image>
+						<Image src={dtv01} width="1920" height="1080" alt="step 1"></Image>
+						<Image src={dtv06} width="1920" height="1080" alt="step 6"></Image>
+						<Image src={dtv05} width="1920" height="1080" alt="step 5"></Image>
+					</div>
+				</div>
+
+				<!-- hpe -->
+				<div class="my-32">
+					<p class="my-8">
+						Content design<br />
+						HPE
+					</p>
+					<div class="grid grid-cols-1 gap-8 mb-8">
+						<Image src={hpe06} width="2676" height="1337" alt="hpe landing page"></Image>
+						<Image src={hpe07} width="2560" height="1440" alt="hpe social tiles"></Image>
+					</div>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+						<Image src={hpe02} width="2560" height="4934" alt="cyber crime"></Image>
+						<Image src={hpe01} width="2560" height="7654" alt="cloud cliff"></Image>
+					</div>
+				</div>
+
+				<!-- mtv -->
+				<div class="my-32">
+					<p class="my-8">
+						Book design<br />
+						MTV
+					</p>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+						<Image src={jackpot01} width="1170" height="777" alt="jackpot"></Image>
+						<Image src={jackpot02} width="1170" height="777" alt="by Kevin Landers"></Image>
+					</div>
+					<div class="grid grid-cols-1 gap-8 mb-8">
+						<Image src={jackpot03} width="1170" height="777" alt="spread"></Image>
+						<Image src={jackpot04} width="1170" height="777" alt="spread"></Image>
+					</div>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+						<Image src={jackpot05} width="1170" height="777" alt="spread"></Image>
+						<Image src={jackpot06} width="1170" height="777" alt="spread"></Image>
+						<Image src={jackpot07} width="1170" height="777" alt="spread"></Image>
+						<Image src={jackpot08} width="1170" height="777" alt="spread"></Image>
+						<Image src={jackpot09} width="1170" height="777" alt="spread"></Image>
+					</div>
+				</div>
+			</Layout>
+	</body>
+</html>

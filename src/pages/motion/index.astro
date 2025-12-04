@@ -1,0 +1,160 @@
+---
+import "../../styles/global.css";
+import Layout from '../../layouts/Layout.astro';
+import BaseHead from '../../components/BaseHead.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+
+import { Image } from "astro:assets";
+import { Vimeo, YouTube } from 'astro-embed';
+
+
+import imageSeventySeven from '../../assets/illustration/TDF_2023-09-25TDF-01.png';
+import imageSeventyEight from '../../assets/illustration/TDF_2023-09-25TDF-02.png';
+import imageSeventyNine from '../../assets/illustration/TDF_2023-09-25TDF-03.png';
+import imageEighty from '../../assets/illustration/TDF_2023-09-25TDF-04.png';
+import imageEightyOne from '../../assets/illustration/TDF_2023-09-25TDF-05.png';
+import imageEightyTwo from '../../assets/illustration/TDF_2023-09-25TDF-06.png';
+import imageEightyThree from '../../assets/illustration/TDF_2023-09-25TDF-07.png';
+import imageEightyFour from '../../assets/illustration/TDF_2023-09-25TDF-08.png';
+import imageEightyFive from '../../assets/illustration/TDF_2023-09-25TDF-09.png';
+
+import transformation01 from '../../assets/motion/transformation01-2x.png';
+import transformation02 from '../../assets/motion/transformation02-2x.png';
+import transformation03 from '../../assets/motion/transformation03-2x.png';
+import transformation04 from '../../assets/motion/transformation04-2x.png';
+import transformation05 from '../../assets/motion/transformation05-2x.png';
+import transformation06 from '../../assets/motion/transformation06-2x.png';
+import transformation07 from '../../assets/motion/transformation07-2x.png';
+import transformation08 from '../../assets/motion/transformation08-2x.png';
+import transformation09 from '../../assets/motion/transformation09-2x.png';
+import transformation10 from '../../assets/motion/transformation10-2x.png';
+import transformation11 from '../../assets/motion/transformation11-2x.png';
+import transformation12 from '../../assets/motion/transformation12-2x.png';
+import transformation13 from '../../assets/motion/transformation13-2x.png';
+import transformation14 from '../../assets/motion/transformation14-2x.png'; 
+import transformation15 from '../../assets/motion/transformation15-2x.png';
+import transformation16 from '../../assets/motion/transformation16-2x.png';                     
+import transformation17 from '../../assets/motion/transformation17-2x.png';                
+import transformation18 from '../../assets/motion/transformation18-2x.png';                
+import transformation19 from '../../assets/motion/transformation19-2x.png';                
+import transformation20 from '../../assets/motion/transformation20-2x.png';                
+import transformation21 from '../../assets/motion/transformation21-2x.png';                
+import transformation22 from '../../assets/motion/transformation22-2x.png';
+
+import midnightmiles01 from '../../assets/motion/midnightmiles01.png';
+import midnightmiles02 from '../../assets/motion/midnightmiles02.png';
+import midnightmiles03 from '../../assets/motion/midnightmiles03.png';
+import midnightmiles04 from '../../assets/motion/midnightmiles04.png';
+
+import specimen01 from '../../assets/motion/Specimen01.png';
+import specimen02 from '../../assets/motion/Specimen02.png';
+import specimen03 from '../../assets/motion/Specimen03.png';
+
+import gpu01 from '../../assets/motion/GPUUUUU_01.png';
+import gpu02 from '../../assets/motion/GPUUUUU_02.png';
+import gpu03 from '../../assets/motion/GPUUUUU_03.png';
+import gpu04 from '../../assets/motion/GPUUUUU_04.png';
+import gpu05 from '../../assets/motion/GPUUUUU_05.png';
+import gpu06 from '../../assets/motion/GPUUUUU_06.png';
+import gpu07 from '../../assets/motion/GPUUUUU_07.png';
+import gpu08 from '../../assets/motion/GPUUUUU_08.png';
+import gpu09 from '../../assets/motion/GPUUUUU_09.png';
+import gpu10 from '../../assets/motion/GPUUUUU_10.png';
+import gpu11 from '../../assets/motion/GPUUUUU_11.png';
+import gpu12 from '../../assets/motion/GPUUUUU_12.png';
+import gpu13 from '../../assets/motion/GPUUUUU_13.png';
+
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Layout>
+			<div class="container mx-auto p-8">
+                <!-- Reel -->
+                <div class="grid grid-cols-1 gap-8 mb-8">
+                    <Vimeo id="https://vimeo.com/814096146?fl=tl&fe=ec">
+                </div>
+                    
+				<!-- TDF -->
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+					<Image src={imageSeventySeven} width="5448" height="2160" alt="TDF"></Image>
+					<Image src={imageSeventyEight} width="5448" height="2160" alt="TDF"></Image>
+					<Image src={imageSeventyNine} width="5448" height="2160" alt="TDF"></Image>
+					<Image src={imageEighty} width="5448" height="2160" alt="TDF"></Image>		
+					<Image src={imageEightyOne} width="5448" height="2160" alt="TDF"></Image>
+					<Image src={imageEightyTwo} width="5448" height="2160" alt="TDF"></Image>
+					<Image src={imageEightyThree} width="5448" height="2160" alt="TDF"></Image>
+					<Image src={imageEightyFour} width="5448" height="2160" alt="TDF"></Image>
+					<Image src={imageEightyFive} width="5448" height="2160" alt="TDF"></Image>
+				</div>
+
+				<!-- GPUUU -->
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+					<!-- <Image src={gpu01} width="2160" height="1215" alt="shapes on shapes on shapes"></Image> -->
+					<Image src={gpu02} width="2160" height="1215" alt="shapes on shapes on shapes"></Image>
+                    <Image src={gpu04} width="2160" height="1215" alt="shapes on shapes on shapes"></Image>
+                    <Image src={gpu05} width="2160" height="1215" alt="shapes on shapes on shapes"></Image>
+                    <Image src={gpu07} width="2160" height="1215" alt="shapes on shapes on shapes"></Image>
+                    <Image src={gpu08} width="2160" height="1215" alt="shapes on shapes on shapes"></Image>
+                    <Image src={gpu09} width="2160" height="1215" alt="shapes on shapes on shapes"></Image>
+                    <Image src={gpu11} width="2160" height="1215" alt="shapes on shapes on shapes"></Image>
+                    <Image src={gpu12} width="2160" height="1215" alt="shapes on shapes on shapes"></Image>
+
+				</div>
+
+				<!-- Transformation -->
+                <div class="grid grid-cols-1 gap-8 mb-8">
+                    <Vimeo id="https://vimeo.com/283314295?fl=tl&fe=ec">
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                        <Image src={transformation01} width="3840" height="2160" alt="design frame"></Image>
+                        <Image src={transformation02} width="3840" height="2160" alt="design frame"></Image>
+                        <Image src={transformation03} width="3840" height="2160" alt="design frame"></Image>
+                        <Image src={transformation04} width="3840" height="2160" alt="design frame"></Image>
+                        <Image src={transformation05} width="3840" height="2160" alt="design frame"></Image>
+                        <Image src={transformation06} width="3840" height="2160" alt="design frame"></Image>
+                        <Image src={transformation07} width="3840" height="2160" alt="design frame"></Image>
+                        <Image src={transformation08} width="3840" height="2160" alt="design frame"></Image>
+                        <Image src={transformation09} width="3840" height="2160" alt="design frame"></Image>
+                        <Image src={transformation10} width="3840" height="2160" alt="design frame"></Image>
+                        <Image src={transformation11} width="3840" height="2160" alt="design frame"></Image>
+                        <Image src={transformation12} width="3840" height="2160" alt="design frame"></Image>
+                        <Image src={transformation13} width="3840" height="2160" alt="design frame"></Image>
+                        <Image src={transformation14} width="3840" height="2160" alt="design frame"></Image>
+                        <Image src={transformation15} width="3840" height="2160" alt="design frame"></Image>
+                        <Image src={transformation16} width="3840" height="2160" alt="design frame"></Image>
+                        <Image src={transformation17} width="3840" height="2160" alt="design frame"></Image>
+                        <Image src={transformation18} width="3840" height="2160" alt="design frame"></Image>
+                        <Image src={transformation19} width="3840" height="2160" alt="design frame"></Image>
+                        <Image src={transformation20} width="3840" height="2160" alt="design frame"></Image>
+                        <Image src={transformation21} width="3840" height="2160" alt="design frame"></Image>
+                        <Image src={transformation22} width="3840" height="2160" alt="design frame"></Image>
+                    </div>
+                    
+                    <!-- Midnight Miles -->
+                    <div class="grid grid-cols-1 gap-8 mb-8">
+                        <Vimeo id="https://vimeo.com/16318308?fl=tl&fe=ec">
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                        <Image src={midnightmiles01} width="1664" height="1304" alt="design frame"></Image>
+                        <Image src={midnightmiles02} width="1664" height="1304" alt="design frame"></Image>
+                        <Image src={midnightmiles03} width="1664" height="1304" alt="design frame"></Image>
+                        <Image src={midnightmiles04} width="1664" height="1304" alt="design frame"></Image>
+                    </div>
+
+                    <!-- Specimen -->
+                    <div class="grid grid-cols-1 gap-8 mb-8">
+                        <Vimeo id="https://vimeo.com/15885998?fl=tl&fe=ec">
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                        <Image src={specimen01} width="746" height="420" alt="design frame"></Image>
+                        <Image src={specimen02} width="746" height="420" alt="design frame"></Image>
+                        <Image src={specimen03} width="746" height="420" alt="design frame"></Image>
+                    </div>
+			</Layout>
+	</body>
+</html>
