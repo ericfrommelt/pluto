@@ -56,6 +56,11 @@ import imageEightyFive from '../../assets/illustration/TDF_2023-09-25TDF-09.png'
 import imageEightySix from '../../assets/illustration/oculus-rift-2x.png';
 
 import imageEightySeven from '../../assets/illustration/styleshifters-2x.png'
+
+import imageEightyEight from '../../assets/illustration/ibm-pure-data-2x.png'
+import imageEightyNine from '../../assets/illustration/ibm-pure-data-inset1-2x.png'
+import imageNinety from '../../assets/illustration/ibm-pure-data-inset2-2x.png'
+import imageNinetyOne from '../../assets/illustration/ibm-pure-data-situ-2x.png'
 ---
 
 <!doctype html>
@@ -66,6 +71,7 @@ import imageEightySeven from '../../assets/illustration/styleshifters-2x.png'
 	<body>
 		<Layout>
 			<div class="container mx-auto p-8">
+				<p class="my-8">March of the Models<br />F&D</p>
 				<!-- March of the Models -->
 				<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xxl:grid-cols-2 gap-8 mb-8">
 					<Image src={imageFiftyFive} width="2656" height="1080" alt="March of the Models"></Image>
@@ -74,24 +80,39 @@ import imageEightySeven from '../../assets/illustration/styleshifters-2x.png'
 					<Image src={imageFiftyFour} width="2560" height="1752" alt="March of the Models"></Image>
 					<Image src={imageFiftySix} width="1471" height="1475" alt="March of the Models"></Image>
 				</div>
-
+				
 				<!-- Reconnecting Morality -->
+				<p class="my-8">Reconnecting Morality<br />F&D</p>
 				<div class="grid grid-cols-1 gap-8 mb-8">
 					<Image src={imageSeventySix} width="2656" height="1080" alt="Reconnecting Morality"></Image>
 				</div>
 				
 				<!-- Spectrum -->
+				<p class="my-8">AI Image Recognition<br />IEEE Spectrum</p>
 				<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xxl:grid-cols-2 gap-8 mb-8">
 					<Image src={imageSeventyTwo} width="2800" height="2100" alt="AI Image Recognition"></Image>
 				</div>
 				<div class="grid grid-cols-2 gap-8 mb-8">
-					<Image src={imageSeventy} width="2800" height="2100" alt="6G"></Image>
-					<Image src={imageSeventyOne} width="2800" height="2100" alt="AI"></Image>
-					<Image src={imageSeventyThree} width="2800" height="2100" alt="Binary"></Image>
-					<Image src={imageSeventyFour} width="2800" height="2100" alt="Telecom Network"></Image>
+					<div>
+						<p class="my-8">6G</p>
+						<Image src={imageSeventy} width="2800" height="2100" alt="6G"></Image>
+					</div>
+					<div>
+						<p class="my-8">AI</p>
+						<Image src={imageSeventyOne} width="2800" height="2100" alt="AI"></Image>
+					</div>
+					<div>
+						<p class="my-8">Binary</p>
+						<Image src={imageSeventyThree} width="2800" height="2100" alt="Binary"></Image>
+					</div>
+					<div>
+						<p class="my-8">Telecom Network</p>
+						<Image src={imageSeventyFour} width="2800" height="2100" alt="Telecom Network"></Image>
+					</div>
 				</div>
 
 				<!-- Five AI Automations -->
+				<p class="my-8">Five Automations <br />Slack</p>
 				<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xxl:grid-cols-3 gap-8 mb-8">
 					<Image src={imageFifty} width="2560" height="1707" alt="Five AI Automations"></Image>
 					<Image src={imageFiftyOne} width="2560" height="1707" alt="Five AI Automations"></Image>
@@ -100,28 +121,33 @@ import imageEightySeven from '../../assets/illustration/styleshifters-2x.png'
 				</div>
 
 				<!-- City Pages -->
+				<p class="my-8">Cryphy Club Nights <br />City Pages</p>
 				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xxl:grid-cols-2 gap-8 mb-8">
 					<Image src={imageFiftySeven} width="2560" height="2945" alt="City Pages"></Image>
 					<Image src={imageFiftyEight} width="2560" height="2945" alt="City Pages"></Image>
 				</div>
 
 				<!-- Creative Computers -->
+				<p class="my-8">Creative Computers <br />USC</p>
 				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xxl:grid-cols-2 gap-8 mb-8">
 					<Image src={imageFiftyNine} width="2560" height="1851" alt="Creative Computers"></Image>
 					<Image src={imageSixty} width="1024" height="715" alt="Creative Computers"></Image>
 				</div>
 
 				<!-- Data Center Game Theory -->
+				<p class="my-8">Game Theory in the Data Center<br />IEEE Spectrum</p>
 				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xxl:grid-cols-2 gap-8 mb-8">
 					<Image src={imageSixtyOne} width="2560" height="3354" alt="Game Theory in the Data Center"></Image>
 				</div>
 
 				<!-- Oculus Gaming -->
+				<p class="my-8">Oculus Gaming <br />Fast Company</p>
 				<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xxl:grid-cols-1 gap-8 mb-8">
 					<Image src={imageEightySix} width="2560" height="2057" alt="Oculus Gaming"></Image>
 				</div>
 				
 				<!-- ESPN Numbers -->
+				<p class="my-8">Numbers <br />ESPN</p>
 				<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xxl:grid-cols-1 gap-8 mb-8">
 					<Image src={imageSixtyTwo} width="2560" height="893" alt="ESPN Numbers column"></Image>
 					<Image src={imageSixtyThree} width="2560" height="891" alt="ESPN Numbers column"></Image>
@@ -132,20 +158,32 @@ import imageEightySeven from '../../assets/illustration/styleshifters-2x.png'
 				</div>
 				
 				<!-- Explainable AI -->
+				<p class="my-8">Explainable AI <br />IEEE Spectrum</p>
 				<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xxl:grid-cols-1 gap-8 mb-8">
 					<Image src={imageSixtySix} width="2560" height="1920" alt="Explainable AI"></Image>
 					<Image src={imageSixtySeven} width="2560" height="774" alt="Explainable AI - 4 question marks"></Image>
 				</div>
 				
 				<!-- Quant Junkies -->
+				<p class="my-8">Quant Junkies <br />Fortune</p>
 				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xxl:grid-cols-2 gap-8 mb-8">
 					<Image src={imageSixtyEight} width="2560" height="2177" alt="Quant Junkies"></Image>
 					<Image src={imageSixtyNine} width="1000" height="1250" alt="Quant Junkies"></Image>
 				</div>
 
 				<!-- Styleshifters -->
+				<p class="my-8">Style Shifters</p>
 				<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xxl:grid-cols-1 gap-8 mb-8">
 					<Image src={imageEightySeven} width="2560" height="3311" alt="Styleshifters"></Image>
+				</div>
+
+				<!-- IBM Pure Data -->
+				<p class="my-8">Pure Data <br />IBM</p>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xxl:grid-cols-2 gap-8 mb-8">
+					<Image src={imageEightyEight} width="2560" height="2560" alt="IBM Pure Data"></Image>
+					<Image src={imageEightyNine} width="2560" height="1416" alt="IBM Pure Data"></Image>
+					<Image src={imageNinety} width="2560" height="1725" alt="IBM Pure Data"></Image>
+					<Image src={imageNinetyOne} width="2560" height="3526" alt="IBM Pure Data"></Image>
 				</div>
 			</Layout>
 	</body>
