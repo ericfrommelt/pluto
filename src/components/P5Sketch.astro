@@ -1,32 +1,41 @@
 ---
 interface Props {
   id?: string;
-  width?: number;
-  height?: number;
+  aspectRatio?: number;
   class?: string;
 }
 
-const { id = 'p5-canvas', width, height, class: className } = Astro.props;
+const { id = 'p5-canvas', aspectRatio, class: className } = Astro.props;
 ---
 
 <div
   id={id}
-  class={className}
-  data-width={width}
-  data-height={height}
+  class:list={['p5-container', className]}
+  data-aspect-ratio={aspectRatio}
 ></div>
+
+<style>
+  .p5-container {
+    width: 100%;
+  }
+  .p5-container :global(canvas) {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+</style>
 
 <script>
   import p5 from 'p5';
 
   document.querySelectorAll<HTMLDivElement>('[id^="p5-canvas"]').forEach((container) => {
-    const w = container.dataset.width ? parseInt(container.dataset.width) : container.clientWidth;
-    const h = container.dataset.height ? parseInt(container.dataset.height) : 400;
+    const ratio = container.dataset.aspectRatio ? parseFloat(container.dataset.aspectRatio) : 9 / 16;
 
     new p5((p: p5) => {
       p.setup = () => {
-        p.createCanvas(w, h);
-        p.background(99,99,12);
+        const w = container.clientWidth;
+        p.createCanvas(w, Math.round(w * ratio));
+        p.background(99, 99, 12);
       };
 
       p.draw = () => {
@@ -36,6 +45,11 @@ const { id = 'p5-canvas', width, height, class: className } = Astro.props;
         const x = p.width / 2 + p.cos(p.frameCount * 0.02) * 100;
         const y = p.height / 2 + p.sin(p.frameCount * 0.03) * 100;
         p.ellipse(x, y, 20, 20);
+      };
+
+      p.windowResized = () => {
+        const w = container.clientWidth;
+        p.resizeCanvas(w, Math.round(w * ratio));
       };
     }, container);
   });
