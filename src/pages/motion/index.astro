@@ -6,6 +6,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 
 import { Image } from "astro:assets";
 import { Vimeo, YouTube } from 'astro-embed';
+import WorkNav from "../../components/WorkNav.astro";
 
 
 import imageSeventySeven from '../../assets/illustration/TDF_2023-09-25TDF-01.png';
@@ -109,6 +110,7 @@ import imageFortyEight from '../../assets/art/ArtificialHumanity-06.png'
 	</head>
 	<body>
 		<Layout>
+            <WorkNav />
 			<div class="container mx-auto p-8">
                 <!-- Reel -->
                 <div class="my-32">
@@ -283,14 +285,6 @@ import imageFortyEight from '../../assets/art/ArtificialHumanity-06.png'
                         <Image src={specimen01} width="746" height="420" alt="design frame"></Image>
                         <Image src={specimen02} width="746" height="420" alt="design frame"></Image>
                         <Image src={specimen03} width="746" height="420" alt="design frame"></Image>
-                    </div>
-                </div>
-                                
-                <!-- Yoshigo! -->
-                <div class="my-32">
-                    <p class="my-8">YoshiGo</p>
-                    <div class="grid grid-cols-1 gap-8 mb-8">
-                        <Vimeo id="https://vimeo.com/1024994355?fl=tl&fe=ec">
                     </div>
                 </div>
             </Layout>

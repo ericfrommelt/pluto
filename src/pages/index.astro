@@ -23,6 +23,9 @@ const generativeImages = globToUrls(
 const motionImages = globToUrls(
   import.meta.glob('../assets/motion/**/*.{jpg,jpeg,png,gif,webp}', { eager: true })
 );
+const datavisImages = globToUrls(
+  import.meta.glob('../assets/datavisualization/**/*.{jpg,jpeg,png,gif,webp}', { eager: true })
+);
 
 const imageMap: Record<string, string[]> = {
   abstract: abstractImages,
@@ -31,6 +34,7 @@ const imageMap: Record<string, string[]> = {
   editorial: editorialImages,
   generative: generativeImages,
   motion: motionImages,
+  datavis: datavisImages,
 };
 ---
 
@@ -55,15 +59,16 @@ const imageMap: Record<string, string[]> = {
     }
   </style>
 
-  <div class="min-h-screen flex items-center justify-center">
+  <div class="flex-1 flex items-center justify-center">
     <nav>
-      <ul class="text-center text-lg font-mono uppercase leading-16">
+      <ul class="text-center text-3xl font-mono font-bold uppercase leading-16">
         <li><a href="/abstract" data-category="abstract">Abstract</a></li>
         <li><a href="/brand" data-category="brand">Brand</a></li>
         <li><a href="/digitalcollage" data-category="digitalcollage">Digital Collage</a></li>
         <li><a href="/illustration" data-category="editorial">Editorial</a></li>
         <li><a href="/generative" data-category="generative">Generative</a></li>
         <li><a href="/motion" data-category="motion">Motion</a></li>
+        <li><a href="/datavis" data-category="datavis">Data Vis</a></li>
       </ul>
     </nav>
   </div>
@@ -123,7 +128,7 @@ const imageMap: Record<string, string[]> = {
       mouseY = e.clientY;
     });
 
-    const nav = document.querySelector('.min-h-screen nav');
+    const nav = document.querySelector('[data-category]')?.closest('nav');
     if (!nav) return;
 
     nav.querySelectorAll('[data-category]').forEach((item) => {

@@ -1,0 +1,242 @@
+---
+import "../../styles/global.css";
+import Layout from '../../layouts/Layout.astro';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import WorkNav from "../../components/WorkNav.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import { Image } from "astro:assets";
+
+
+import imageThirtyFour from '../../assets/art/PlusMinus-01.png';
+import imageThirtyFive from '../../assets/art/PlusMinus-02.png';
+
+import untitledPanic01 from '../../assets/abstract/Untitled-Panic01.png';
+import untitledPanic02 from '../../assets/abstract/Untitled-Panic02.png';
+import untitledPanic03 from '../../assets/abstract/Untitled-Panic03.png';
+import untitledPanic04 from '../../assets/abstract/Untitled-Panic04.png';
+import untitledPanic05 from '../../assets/abstract/Untitled-Panic05.png';
+import artificialIntelligence from '../../assets/abstract/artificial-intelligence-2x.png';
+import breach from '../../assets/abstract/breach-2x.png';
+import breakout from '../../assets/abstract/breakout-2x.png';
+import bunker from '../../assets/abstract/bunker-2x.png';
+import controlApparatus from '../../assets/abstract/control-apparatus-2x.png';
+import cpu from '../../assets/abstract/cpu-2x.png';
+import dsp from '../../assets/abstract/dsp-2x.png';
+import encryptionKey from '../../assets/abstract/encryption-key-2x.png';
+import everyday04012016 from '../../assets/abstract/everyday_04-01-2016@4x.png';
+import everyday04012020 from '../../assets/abstract/everyday_04-01-2020@4x.png';
+import everyday04022016 from '../../assets/abstract/everyday_04-02-2016@4x.png';
+import everyday04032016 from '../../assets/abstract/everyday_04-03-2016@4x.png';
+import everyday04042016 from '../../assets/abstract/everyday_04-04-2016@4x.png';
+import everyday04052016 from '../../assets/abstract/everyday_04-05-2016@4x.png';
+import everyday04072016 from '../../assets/abstract/everyday_04-07-2016@4x.png';
+import everyday04082016 from '../../assets/abstract/everyday_04-08-2016@4x.png';
+import everyday04092016 from '../../assets/abstract/everyday_04-09-2016@4x.png';
+import everyday04102016 from '../../assets/abstract/everyday_04-10-2016@4x.png';
+import everyday04112016 from '../../assets/abstract/everyday_04-11-2016@4x.png';
+import everyday04122016 from '../../assets/abstract/everyday_04-12-2016@4x.png';
+import everyday04132016 from '../../assets/abstract/everyday_04-13-2016@4x.png';
+import everyday04142016 from '../../assets/abstract/everyday_04-14-2016@4x.png';
+import everyday04152016 from '../../assets/abstract/everyday_04-15-2016@4x.png';
+import everyday04162016 from '../../assets/abstract/everyday_04-16-2016@4x.png';
+import everyday04172016 from '../../assets/abstract/everyday_04-17-2016@4x.png';
+import everyday04182016 from '../../assets/abstract/everyday_04-18-2016@4x.png';
+import everyday04192016 from '../../assets/abstract/everyday_04-19-2016@4x.png';
+import everyday04202016 from '../../assets/abstract/everyday_04-20-2016@4x.png';
+import everyday04212016 from '../../assets/abstract/everyday_04-21-2016@4x.png';
+import everyday04222016 from '../../assets/abstract/everyday_04-22-2016@4x.png';
+import everyday04232016 from '../../assets/abstract/everyday_04-23-2016@4x.png';
+import everyday04242016 from '../../assets/abstract/everyday_04-24-2016@4x.png';
+import everyday04252016 from '../../assets/abstract/everyday_04-25-2016@4x.png';
+import everyday04262016 from '../../assets/abstract/everyday_04-26-2016@4x.png';
+import everyday04272016 from '../../assets/abstract/everyday_04-27-2016@4x.png';
+import everyday04282016 from '../../assets/abstract/everyday_04-28-2016@4x.png';
+import everyday04292016 from '../../assets/abstract/everyday_04-29-2016@4x.png';
+import everyday04302016 from '../../assets/abstract/everyday_04-30-2016@4x.png';
+import everyday05012016 from '../../assets/abstract/everyday_05-01-2016@4x.png';
+import everyday05042016 from '../../assets/abstract/everyday_05-04-2016@4x.png';
+import everyday05052016 from '../../assets/abstract/everyday_05-05-2016@4x.png';
+import everyday05062016 from '../../assets/abstract/everyday_05-06-2016@4x.png';
+import everyday05072016 from '../../assets/abstract/everyday_05-07-2016@4x.png';
+import everyday05082016 from '../../assets/abstract/everyday_05-08-2016@4x.png';
+import everyday05102016 from '../../assets/abstract/everyday_05-10-2016@4x.png';
+import fairfax from '../../assets/abstract/fairfax-2x.png';
+import google from '../../assets/abstract/google-2x.png';
+import gps from '../../assets/abstract/gps-2x.png';
+import integratedCircuit from '../../assets/abstract/integrated-circuit-2x.png';
+import intercept from '../../assets/abstract/intercept-2x.png';
+import lSystem from '../../assets/abstract/l-system-2x.png';
+import leak from '../../assets/abstract/leak-2x.png';
+import logicInternal from '../../assets/abstract/logic-internal-2x.png';
+import loop from '../../assets/abstract/loop-2x.png';
+import namicsTransformation from '../../assets/abstract/namics_transformation-2x.png';
+import networkObject1 from '../../assets/abstract/network-object1-2x.png';
+import networkObject2 from '../../assets/abstract/network-object2-2x.png';
+import norad from '../../assets/abstract/norad-2x.png';
+import observatory from '../../assets/abstract/observatory-2x.png';
+import resistance from '../../assets/abstract/resistance-2x.png';
+import rigged from '../../assets/abstract/rigged-2x.png';
+import source from '../../assets/abstract/source-2x.png';
+import squared01 from '../../assets/abstract/squared-01-2x.png';
+import squared02 from '../../assets/abstract/squared-02-2x.png';
+import squared03 from '../../assets/abstract/squared-03-2x.png';
+import structure from '../../assets/abstract/structure-2x.png';
+import unit from '../../assets/abstract/unit-2x.png';
+import wiretap from '../../assets/abstract/wiretap-2x.png';
+import fieldSeries01 from '../../assets/abstract/Field_Series_01b.jpg';
+import fieldSeries02 from '../../assets/abstract/Field_Series_02b.png';
+import fieldSeries03 from '../../assets/abstract/Field_Series_03.png';
+import geneticDeflection from '../../assets/abstract/GeneticDeflection-2x.png';
+import hallOfJustice from '../../assets/abstract/HallOfJustice-2x.png';
+import scales from '../../assets/abstract/Scales-2x.png';
+
+
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Layout>
+			<WorkNav />
+			<div class="container mx-auto p-8">
+				<!-- +- -->
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+					<Image src={imageThirtyFour} width="1224" height="1584" alt="Untitled"></Image>
+					<Image src={imageThirtyFive} width="1224" height="1584" alt="Untitled"></Image>
+				</div>
+				<!-- Untitled Panic -->
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
+					<Image src={untitledPanic01} alt="Untitled Panic 01" class="w-full h-auto" />
+					<Image src={untitledPanic02} alt="Untitled Panic 02" class="w-full h-auto" />
+					<Image src={untitledPanic03} alt="Untitled Panic 03" class="w-full h-auto" />
+					<Image src={untitledPanic04} alt="Untitled Panic 04" class="w-full h-auto" />
+					<Image src={untitledPanic05} alt="Untitled Panic 05" class="w-full h-auto" />
+				</div>
+
+				<!-- Everyday — April 2016 -->
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 my-16">
+					<Image src={everyday04012016} alt="Everyday 04-01-2016" class="w-full h-auto" />
+					<Image src={everyday04022016} alt="Everyday 04-02-2016" class="w-full h-auto" />
+					<Image src={everyday04032016} alt="Everyday 04-03-2016" class="w-full h-auto" />
+					<Image src={everyday04042016} alt="Everyday 04-04-2016" class="w-full h-auto" />
+					<Image src={everyday04052016} alt="Everyday 04-05-2016" class="w-full h-auto" />
+					<Image src={everyday04072016} alt="Everyday 04-07-2016" class="w-full h-auto" />
+					<Image src={everyday04082016} alt="Everyday 04-08-2016" class="w-full h-auto" />
+					<Image src={everyday04092016} alt="Everyday 04-09-2016" class="w-full h-auto" />
+					<Image src={everyday04102016} alt="Everyday 04-10-2016" class="w-full h-auto" />
+					<Image src={everyday04112016} alt="Everyday 04-11-2016" class="w-full h-auto" />
+					<Image src={everyday04122016} alt="Everyday 04-12-2016" class="w-full h-auto" />
+					<Image src={everyday04132016} alt="Everyday 04-13-2016" class="w-full h-auto" />
+					<Image src={everyday04142016} alt="Everyday 04-14-2016" class="w-full h-auto" />
+					<Image src={everyday04152016} alt="Everyday 04-15-2016" class="w-full h-auto" />
+					<Image src={everyday04162016} alt="Everyday 04-16-2016" class="w-full h-auto" />
+					<Image src={everyday04172016} alt="Everyday 04-17-2016" class="w-full h-auto" />
+					<Image src={everyday04182016} alt="Everyday 04-18-2016" class="w-full h-auto" />
+					<Image src={everyday04192016} alt="Everyday 04-19-2016" class="w-full h-auto" />
+					<Image src={everyday04202016} alt="Everyday 04-20-2016" class="w-full h-auto" />
+					<Image src={everyday04212016} alt="Everyday 04-21-2016" class="w-full h-auto" />
+					<Image src={everyday04222016} alt="Everyday 04-22-2016" class="w-full h-auto" />
+					<Image src={everyday04232016} alt="Everyday 04-23-2016" class="w-full h-auto" />
+					<Image src={everyday04242016} alt="Everyday 04-24-2016" class="w-full h-auto" />
+					<Image src={everyday04252016} alt="Everyday 04-25-2016" class="w-full h-auto" />
+					<Image src={everyday04262016} alt="Everyday 04-26-2016" class="w-full h-auto" />
+					<Image src={everyday04272016} alt="Everyday 04-27-2016" class="w-full h-auto" />
+					<Image src={everyday04282016} alt="Everyday 04-28-2016" class="w-full h-auto" />
+					<Image src={everyday04292016} alt="Everyday 04-29-2016" class="w-full h-auto" />
+					<Image src={everyday04302016} alt="Everyday 04-30-2016" class="w-full h-auto" />
+				</div>
+
+				<!-- Everyday — May 2016 + 2020 -->
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 my-16">
+					<Image src={everyday05012016} alt="Everyday 05-01-2016" class="w-full h-auto" />
+					<Image src={everyday05042016} alt="Everyday 05-04-2016" class="w-full h-auto" />
+					<Image src={everyday05052016} alt="Everyday 05-05-2016" class="w-full h-auto" />
+					<Image src={everyday05062016} alt="Everyday 05-06-2016" class="w-full h-auto" />
+					<Image src={everyday05072016} alt="Everyday 05-07-2016" class="w-full h-auto" />
+					<Image src={everyday05082016} alt="Everyday 05-08-2016" class="w-full h-auto" />
+					<Image src={everyday05102016} alt="Everyday 05-10-2016" class="w-full h-auto" />
+					<Image src={everyday04012020} alt="Everyday 04-01-2020" class="w-full h-auto" />
+				</div>
+
+				<!-- Field Series -->
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 my-16">
+					<Image src={fieldSeries01} alt="Field Series 01" class="w-full h-auto" />
+					<Image src={fieldSeries02} alt="Field Series 02" class="w-full h-auto" />
+					<Image src={fieldSeries03} alt="Field Series 03" class="w-full h-auto" />
+				</div>
+
+				<!-- Squared -->
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 my-16">
+					<Image src={squared01} alt="Squared 01" class="w-full h-auto" />
+					<Image src={squared02} alt="Squared 02" class="w-full h-auto" />
+					<Image src={squared03} alt="Squared 03" class="w-full h-auto" />
+				</div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
+                    <Image src={artificialIntelligence} alt="Artificial Intelligence" class="w-full h-auto" />
+                    <Image src={breach} alt="Breach" class="w-full h-auto" />
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
+                    <Image src={google} alt="Google" class="w-full h-auto" />
+                    <Image src={gps} alt="GPS" class="w-full h-auto" />
+                </div>
+				<!-- Tech / Surveillance series -->
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 my-16">
+					<Image src={breakout} alt="Breakout" class="w-full h-auto" />
+					<Image src={bunker} alt="Bunker" class="w-full h-auto" />
+					<Image src={controlApparatus} alt="Control Apparatus" class="w-full h-auto" />
+					<Image src={cpu} alt="CPU" class="w-full h-auto" />
+					<Image src={dsp} alt="DSP" class="w-full h-auto" />
+					<Image src={encryptionKey} alt="Encryption Key" class="w-full h-auto" />
+					<Image src={integratedCircuit} alt="Integrated Circuit" class="w-full h-auto" />
+					<Image src={loop} alt="Loop" class="w-full h-auto" />
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
+					<Image src={observatory} alt="Observatory" class="w-full h-auto" />
+                    <Image src={intercept} alt="Intercept" class="w-full h-auto" />
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
+					<Image src={fairfax} alt="Fairfax" class="w-full h-auto" />
+					<Image src={resistance} alt="Resistance" class="w-full h-auto" />
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
+                    <Image src={logicInternal} alt="Logic Internal" class="w-full h-auto" />
+					<Image src={lSystem} alt="L-System" class="w-full h-auto" />
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
+					<Image src={leak} alt="Leak" class="w-full h-auto" />
+					<Image src={norad} alt="NORAD" class="w-full h-auto" />
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
+					<Image src={rigged} alt="Rigged" class="w-full h-auto" />
+					<Image src={namicsTransformation} alt="Namics Transformation" class="w-full h-auto" />
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
+                    <Image src={source} alt="Source" class="w-full h-auto" />
+                    <Image src={unit} alt="Unit" class="w-full h-auto" />
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
+                    <Image src={networkObject1} alt="Network Object 1" class="w-full h-auto" />
+                    <Image src={networkObject2} alt="Network Object 2" class="w-full h-auto" />
+                </div>
+                
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
+					<Image src={structure} alt="Structure" class="w-full h-auto" />
+					<Image src={wiretap} alt="Wiretap" class="w-full h-auto" />
+				</div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 my-16">
+                    <Image src={geneticDeflection} alt="Genetic Deflection" class="w-full h-auto" />
+                    <Image src={hallOfJustice} alt="Hall of Justice" class="w-full h-auto" />
+                    <Image src={scales} alt="Scales" class="w-full h-auto" />
+
+                </div>
+		</Layout>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+---
+import "../../styles/global.css";
+import Layout from '../../layouts/Layout.astro';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import WorkNav from "../../components/WorkNav.astro";
+import Lightbox from "../../components/Lightbox.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import { Image } from "astro:assets";
+
+import valueStory from '../../assets/datavisualization/ValueStory.png';
+import infographics from '../../assets/datavisualization/infographics.png';
+import popmechAutointel from '../../assets/datavisualization/popmech-autointel-2x.png';
+import uscSpacejunk from '../../assets/datavisualization/usc-spacejunk-2x.png';
+import wiredOkcupid from '../../assets/datavisualization/wired-okcupid-2x.png';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Layout>
+			<WorkNav />
+			<div class="container mx-auto p-8">
+
+                <p class="my-8">OkCupid Visualization - Wired</p>
+				<div class="grid grid-cols-1 md:grid-cols-1 gap-8 mb-16">
+					<Image src={wiredOkcupid} alt="Wired — OKCupid" class="w-full h-auto" />
+				</div>
+                <p class="my-8">Value Story - American Express</p>
+                <div class="grid grid-cols-1 gap-8 mb-16">
+                    <Image src={valueStory} alt="Value Story" class="w-full h-auto" />
+                    
+                    <p class="my-8">Select infographics</p>
+                    <Image src={infographics} alt="Infographics" class="w-full h-auto" />
+                </div>
+				<div class="grid grid-cols-1 md:grid-cols1 gap-8 mb-16">
+                    <p class="my-8">Visializing the satellites orbiting earth - USC</p>
+					<Image src={uscSpacejunk} alt="USC — Space Junk" class="w-full h-auto" />
+				</div>
+			</div>
+			<Lightbox />
+		</Layout>
+	</body>
+</html>

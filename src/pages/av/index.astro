@@ -1,0 +1,51 @@
+---
+import "../../styles/global.css";
+import Layout from '../../layouts/Layout.astro';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import WorkNav from "../../components/WorkNav.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import { Image } from "astro:assets";
+import { YouTube, Vimeo } from "astro-embed";
+import { MuxPlayer } from "@mux/mux-player-astro";
+
+import imageThirtyFour from '../../assets/art/PlusMinus-01.png';
+import imageThirtyFive from '../../assets/art/PlusMinus-02.png';
+
+
+
+
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Layout>
+			<WorkNav />
+			<div class="container mx-auto p-8">
+				<!-- YoshiGo -->
+				<div class="grid grid-cols-1 md:grid-cols-1 gap-8 mb-8">
+                    <MuxPlayer
+						playbackId="dL1LKqb00NTuKioyY3maUY1HP7K8DpU72mGgT1Ff01D01U"
+						metadata={{
+							video_title: 'YoshiGo by Eric Frommelt',
+						}}
+						style={{
+							display: 'block',
+							aspectRatio: '16/9',
+							backgroundColor: '#000',
+							margin: '1rem 0 2rem',
+						}}
+						primaryColor="#f2ec3a"
+						secondaryColor="#0caa09"
+						accentColor="#6e1e99"
+						defaultShowRemainingTime={true}
+/>
+                </div>
+		</Layout>
+	</body>
+</html>

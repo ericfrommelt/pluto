@@ -1,0 +1,113 @@
+---
+import "../../styles/global.css";
+import Layout from '../../layouts/Layout.astro';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import WorkNav from "../../components/WorkNav.astro";
+import Lightbox from "../../components/Lightbox.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import { Image } from "astro:assets";
+import { MuxPlayer } from "@mux/mux-player-astro";
+
+import generative01 from '../../assets/generative/generative-01.png';
+import generative02 from '../../assets/generative/generative-02.png';
+import generative03 from '../../assets/generative/generative-03.png';
+import generative04 from '../../assets/generative/generative-04.png';
+import generative05 from '../../assets/generative/generative-05.png';
+import generative06 from '../../assets/generative/generative-06.png';
+import generative07 from '../../assets/generative/generative-07.png';
+import generative08 from '../../assets/generative/generative-08.png';
+import generative09 from '../../assets/generative/generative-09.png';
+import generative10 from '../../assets/generative/generative-10.png';
+import generative11 from '../../assets/generative/generative-11.png';
+
+import generationX01 from '../../assets/generative/generation__x/generation-x-01.png';
+import generationX02 from '../../assets/generative/generation__x/generation-x-02.png';
+import generationX03 from '../../assets/generative/generation__x/generation-x-03.png';
+import generationX04 from '../../assets/generative/generation__x/generation-x-04.png';
+import generationX05 from '../../assets/generative/generation__x/generation-x-05.png';
+import generationX06 from '../../assets/generative/generation__x/generation-x-06.png';
+import generationX07 from '../../assets/generative/generation__x/generation-x-07.png';
+import generationX08 from '../../assets/generative/generation__x/generation-x-08.png';
+import generationX09 from '../../assets/generative/generation__x/generation-x-09.png';
+import generationX10 from '../../assets/generative/generation__x/generation-x-10.png';
+import generationX11 from '../../assets/generative/generation__x/generation-x-11.png';
+import generationX12 from '../../assets/generative/generation__x/generation-x-12.png';
+
+import yoshiGo01 from '../../assets/generative/yoshiGo/yoshi-go-01.png';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Layout>
+			<WorkNav />
+			<div class="container mx-auto p-8">
+
+				<!-- YoshiGo video -->
+				<div class="grid grid-cols-1 gap-8 mb-8">
+					<MuxPlayer
+						playbackId="dL1LKqb00NTuKioyY3maUY1HP7K8DpU72mGgT1Ff01D01U"
+						metadata={{ video_title: 'YoshiGo by Eric Frommelt' }}
+						style={{
+							display: 'block',
+							aspectRatio: '16/9',
+							backgroundColor: '#000',
+							margin: '1rem 0 2rem',
+						}}
+						primaryColor="#f2ec3a"
+						secondaryColor="#0caa09"
+						accentColor="#6e1e99"
+						defaultShowRemainingTime={true}
+					/>
+				</div>
+
+				<!-- YoshiGo still -->
+				<div class="grid grid-cols-1 gap-8 mb-16">
+					<Image src={yoshiGo01} alt="YoshiGo" class="w-full h-auto" />
+				</div>
+
+				<!-- Generation X -->
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+					<Image src={generationX02} alt="Generation X 02" class="w-full h-auto" />
+					<Image src={generationX03} alt="Generation X 03" class="w-full h-auto" />
+					<Image src={generationX04} alt="Generation X 04" class="w-full h-auto" />
+					<Image src={generationX05} alt="Generation X 05" class="w-full h-auto" />
+					<Image src={generationX06} alt="Generation X 06" class="w-full h-auto" />
+					<Image src={generationX07} alt="Generation X 07" class="w-full h-auto" />
+					<Image src={generationX08} alt="Generation X 08" class="w-full h-auto" />
+					<Image src={generationX09} alt="Generation X 09" class="w-full h-auto" />
+					<Image src={generationX10} alt="Generation X 10" class="w-full h-auto" />
+					<Image src={generationX11} alt="Generation X 11" class="w-full h-auto" />
+					<Image src={generationX12} alt="Generation X 12" class="w-full h-auto" />
+					<Image src={generationX01} alt="Generation X 01" class="w-full h-auto" />
+				</div>
+
+				<!-- Generative works -->
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+					<Image src={generative01} alt="Generative 01" class="w-full h-auto" />
+					<Image src={generative02} alt="Generative 02" class="w-full h-auto" />
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+					<Image src={generative03} alt="Generative 03" class="w-full h-auto" />
+					<Image src={generative04} alt="Generative 04" class="w-full h-auto" />
+					<Image src={generative05} alt="Generative 05" class="w-full h-auto" />
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+					<Image src={generative06} alt="Generative 06" class="w-full h-auto" />
+					<Image src={generative07} alt="Generative 07" class="w-full h-auto" />
+					<Image src={generative08} alt="Generative 08" class="w-full h-auto" />
+					<Image src={generative09} alt="Generative 09" class="w-full h-auto" />
+					<Image src={generative10} alt="Generative 10" class="w-full h-auto" />
+					<Image src={generative11} alt="Generative 11" class="w-full h-auto" />
+				</div>
+
+			</div>
+			<Lightbox />
+		</Layout>
+	</body>
+</html>

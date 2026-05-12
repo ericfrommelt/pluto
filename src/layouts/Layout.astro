@@ -3,6 +3,7 @@ import Analytics from '@vercel/analytics/astro'
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Lightbox from "../components/Lightbox.astro";
 ---
 
 <!doctype html>
@@ -13,11 +14,25 @@ import Footer from "../components/Footer.astro";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Eric Frommelt &mdash; Artist + Illustrator</title>
+		{import.meta.env.PROD && (
+			<>
+				<!-- Google tag (gtag.js) -->
+				<script is:inline src="https://www.googletagmanager.com/gtag/js?id=G-0G9E31EKEE"></script>
+				<script is:inline>
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+
+				gtag('config', 'G-0G9E31EKEE');
+				</script>
+			</>
+		)}
 	</head>
-	<body class="bg-black text-neutral-100">
+	<body class="bg-black text-neutral-100 flex flex-col min-h-screen">
 		<Header />
 		<slot />
 		<Footer />
+		<Lightbox />
 		<Analytics />
 	</body>
 </html>

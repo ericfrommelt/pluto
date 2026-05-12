@@ -2,19 +2,18 @@
 import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
 import efIcon from '../assets/EF-HeaderIcon.svg';
+import efName from '../assets/ef-nameplate.svg';
 ---
 
 <header class="flex items-center justify-between p-10">
 	<div class="flex items-center space-x-4">
 	<a href="/" class="flex items-center">
-		<img src={efIcon.src} alt="Logo" width={40} height={40} class="h-10 w-10 dark:invert" />
+		<img src={efName.src} alt="Logo" width={169} height={64} data-lightbox-ignore />
 	</a>
 	</div>
 	<nav>
-	<ul class="flex space-x-4 text-lg">
-		<li><a href="/motion" class="hover:underline medium">Motion</a></li>
-		<li><a href="/brand" class="hover:underline medium">Brand</a></li>
-		<li><a href="/illustration" class="hover:underline medium">Illustration</a></li>
+	<ul class="flex space-x-4 text-md">
+		<li><a href="/" class="hover:underline medium">Work</a></li>
 		<li><a href="/info" class="hover:underline medium">Info</a></li>
 	</ul>
 	</nav>

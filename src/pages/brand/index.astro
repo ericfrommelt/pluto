@@ -6,6 +6,8 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 
 import { Image } from "astro:assets";
 import { Vimeo, YouTube } from 'astro-embed';
+import WorkNav from "../../components/WorkNav.astro";
+
 
 // dtv
 import dtv01 from '../../assets/brand/dtv/CheckInfo.png';
@@ -81,6 +83,8 @@ import xlab04 from '../../assets/brand/xlab/XL-4.png';
 	</head>
 	<body>
 		<Layout>
+			<WorkNav />
+
 			<div class="container mx-auto p-8">
 				<!-- crea.dev -->
 				<div class="my-32">
