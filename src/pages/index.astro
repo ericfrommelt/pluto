@@ -3,6 +3,26 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
+  <div class="img-layer img-layer-a"></div>
+  <div class="img-layer img-layer-b"></div>
+
+  <style>
+    .img-layer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 700px;
+      height: 700px;
+      background-size: cover;
+      background-position: center;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 400ms ease;
+      z-index: -1;
+      transform: translate(-350px, -350px);
+    }
+  </style>
+
   <div class="min-h-screen flex items-center justify-center">
     <nav>
       <ul class="text-center text-lg font-mono uppercase leading-16">
