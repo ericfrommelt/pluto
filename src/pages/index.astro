@@ -1,5 +1,37 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+function globToUrls(glob: Record<string, any>) {
+  return Object.values(glob).map((m) => m.default.src);
+}
+
+const abstractImages = globToUrls(
+  import.meta.glob('../assets/abstract/**/*.{jpg,jpeg,png,gif,webp}', { eager: true })
+);
+const brandImages = globToUrls(
+  import.meta.glob('../assets/brand/**/*.{jpg,jpeg,png,gif,webp}', { eager: true })
+);
+const collageImages = globToUrls(
+  import.meta.glob('../assets/digitalcollage/**/*.{jpg,jpeg,png,gif,webp}', { eager: true })
+);
+const editorialImages = globToUrls(
+  import.meta.glob('../assets/illustration/**/*.{jpg,jpeg,png,gif,webp}', { eager: true })
+);
+const generativeImages = globToUrls(
+  import.meta.glob('../assets/generative/**/*.{jpg,jpeg,png,gif,webp}', { eager: true })
+);
+const motionImages = globToUrls(
+  import.meta.glob('../assets/motion/**/*.{jpg,jpeg,png,gif,webp}', { eager: true })
+);
+
+const imageMap: Record<string, string[]> = {
+  abstract: abstractImages,
+  brand: brandImages,
+  digitalcollage: collageImages,
+  editorial: editorialImages,
+  generative: generativeImages,
+  motion: motionImages,
+};
 ---
 
 <Layout>
