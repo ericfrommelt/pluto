@@ -124,6 +124,7 @@ const imageMap: Record<string, string[]> = {
     });
 
     const nav = document.querySelector('.min-h-screen nav');
+    if (!nav) return;
 
     nav.querySelectorAll('[data-category]').forEach((item) => {
       item.addEventListener('mouseenter', () => {
