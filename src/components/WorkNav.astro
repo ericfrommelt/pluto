@@ -5,15 +5,15 @@ const active = (href: string) => path.startsWith(href) ? 'border-l-8 border-oran
 
 <div class="nav-wrapper">
 <!-- Work categories -->
-    <nav class="w-full max-w-60 md:fixed md:top-1/2 md:-translate-y-1/2 z-90">
+    <nav class="w-full max-w-80 md:fixed md:top-1/2 md:-translate-y-1/2 z-40">
         <ul class="flex-row space-x-4 text-lg font-mono uppercase leading-16">
-            <li class={`bg-black pl-6 ${active('/abstract')}`}><a href="/abstract" class="hover:underline medium">Abstract</a></li>
-            <li class={`bg-black pl-6 ${active('/brand')}`}><a href="/brand" class="hover:underline medium">Brand</a></li>
-            <li class={`bg-black pl-6 ${active('/datavis')}`}><a href="/datavis" class="hover:underline medium">Data Visualization</a></li>
-            <li class={`bg-black pl-6 ${active('/digitalcollage')}`}><a href="/digitalcollage" class="hover:underline medium">Digital Collage</a></li>
-            <li class={`bg-black pl-6 ${active('/illustration')}`}><a href="/illustration" class="hover:underline medium">Editorial</a></li>
-            <li class={`bg-black pl-6 ${active('/generative')}`}><a href="/generative" class="hover:underline medium">Generative</a></li>
-            <li class={`bg-black pl-6 ${active('/motion')}`}><a href="/motion" class="hover:underline medium">Motion</a></li>
+            <li class={`bg-black pl-6  ${active('/abstract')}`}><a href="/abstract" class="hover:underline underline-offset-8">Abstract</a></li>
+            <li class={`bg-black pl-6  ${active('/brand')}`}><a href="/brand" class="hover:underline underline-offset-8">Brand</a></li>
+            <li class={`bg-black pl-6  ${active('/datavis')}`}><a href="/datavis" class="hover:underline underline-offset-8">Data Visualization</a></li>
+            <li class={`bg-black pl-6  ${active('/digitalcollage')}`}><a href="/digitalcollage" class="hover:underline underline-offset-8">Digital Collage</a></li>
+            <li class={`bg-black pl-6  ${active('/illustration')}`}><a href="/illustration" class="hover:underline underline-offset-8">Editorial</a></li>
+            <li class={`bg-black pl-6  ${active('/generative')}`}><a href="/generative" class="hover:underline underline-offset-8">Generative</a></li>
+            <li class={`bg-black pl-6  ${active('/motion')}`}><a href="/motion" class="hover:underline underline-offset-8">Motion</a></li>
         </ul>
     </nav>
 </div>

@@ -2,16 +2,20 @@
 const today = new Date();
 ---
 
-<footer class="grid grid-cols-1 md:grid-cols-3 p-4 py-4">
+<footer class="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 py-4">
 
+	
+	<div class="py-4 pb-10 text-sm">
+		Los Angeles, California
+	</div>
 	<div class="py-4">
-	<ul class="flex flex-col text-sm">
-		<li>
-		<a href="mailto:eric@ericfrommelt.com" class="hover:underline">
-			eric@ericfrommelt.com
-		</a>
-		</li>
-	</ul>
+		<ul class="flex flex-col text-sm">
+			<li>
+			<a href="mailto:eric@ericfrommelt.com" class="hover:underline">
+				eric@ericfrommelt.com
+			</a>
+			</li>
+		</ul>
 	</div>
 
 	<div class="py-4">
@@ -39,8 +43,7 @@ const today = new Date();
 		</li>
 	</ul>
 	</div>
-	<div class="py-4 pb-10 text-sm md:text-right">
-	&copy; {today.getFullYear()} Eric Frommelt
-
+	<div class="py-4 pb-10 text-sm">
+		&copy; {today.getFullYear()} Eric Frommelt
 	</div>
 </footer>
