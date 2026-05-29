@@ -11,7 +11,7 @@ import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com',
+  site: 'https://ericfrommelt.com',
   integrations: [mdx(), sitemap(), astroImageTools],
 
   vite: {
