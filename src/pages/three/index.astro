@@ -1,0 +1,23 @@
+
+---
+import "../../styles/global.css";
+import Layout from '../../layouts/Layout.astro';
+import BaseHead from '../../components/BaseHead.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import { Image } from "astro:assets";
+import ThreeOne from '../../components/three/ThreeOne';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Layout>
+			<div class="container mx-auto p-8 webgl">
+                <ThreeOne client:only="react" />
+            </div>
+        </Layout>
+	</body>
+</html>
