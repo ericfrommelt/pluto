@@ -36,6 +36,13 @@ import generationX11 from '../../assets/generative/generation__x/generation-x-11
 import generationX12 from '../../assets/generative/generation__x/generation-x-12.png';
 
 import yoshiGo01 from '../../assets/generative/yoshiGo/yoshi-go-01.png';
+
+import lsc01 from '../../assets/generative/lsc/lsc-001.jpg';
+import lsc02 from '../../assets/generative/lsc/lsc-002.jpg';
+import lsc03 from '../../assets/generative/lsc/lsc-003.jpg';
+import lsc04 from '../../assets/generative/lsc/lsc-004.jpg';
+import lsc05 from '../../assets/generative/lsc/lsc-005.jpg';
+
 ---
 
 <!doctype html>
@@ -47,6 +54,8 @@ import yoshiGo01 from '../../assets/generative/yoshiGo/yoshi-go-01.png';
 		<Layout>
 			<WorkNav />
 			<div class="container mx-auto p-8">
+				<h3>Code</h3>
+				<p>Java / Processing / Midi</p>
 
 				<!-- YoshiGo video -->
 				<div class="grid grid-cols-1 gap-8 mb-8">
@@ -63,11 +72,11 @@ import yoshiGo01 from '../../assets/generative/yoshiGo/yoshi-go-01.png';
 						secondaryColor="#0caa09"
 						accentColor="#6e1e99"
 						defaultShowRemainingTime={true}
-					/>
-				</div>
-
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-					<MuxPlayer
+						/>
+					</div>
+					
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+						<MuxPlayer
 						playbackId="a5ta2wI3L01b9oBXVGgEt76WSKctBOjcijqaGfpZfwIk"
 						metadata={{ video_title: 'YoshiGo by Eric Frommelt' }}
 						style={{
@@ -80,12 +89,12 @@ import yoshiGo01 from '../../assets/generative/yoshiGo/yoshi-go-01.png';
 						secondaryColor="#0caa09"
 						accentColor="#6e1e99"
 						defaultShowRemainingTime={true}
-					/>
-					<Image src={yoshiGo01} alt="YoshiGo" class="w-full h-auto" />
-				</div>
-
-				<!-- Generation X -->
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+						/>
+						<Image src={yoshiGo01} alt="YoshiGo" class="w-full h-auto" />
+					</div>
+					
+					<!-- Generation X -->
+					<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
 					<Image src={generationX02} alt="Generation X 02" class="w-full h-auto" />
 					<Image src={generationX03} alt="Generation X 03" class="w-full h-auto" />
 					<Image src={generationX04} alt="Generation X 04" class="w-full h-auto" />
@@ -118,6 +127,17 @@ import yoshiGo01 from '../../assets/generative/yoshiGo/yoshi-go-01.png';
 					<Image src={generative10} alt="Generative 10" class="w-full h-auto" />
 					<Image src={generative11} alt="Generative 11" class="w-full h-auto" />
 				</div>
+
+				<h3 class="mt-32">Generative images</h3>
+				<p>Comfy UI / Stable Diffusion / Flux</p>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+					<Image src={lsc01} alt="Generative image" class="w-full h-auto" />
+					<Image src={lsc02} alt="Generative image" class="w-full h-auto" />
+					<Image src={lsc03} alt="Generative image" class="w-full h-auto" />
+					<Image src={lsc04} alt="Generative image" class="w-full h-auto" />
+					<Image src={lsc05} alt="Generative image" class="w-full h-auto" />
+				</div>
+
 
 			</div>
 			<Lightbox />
