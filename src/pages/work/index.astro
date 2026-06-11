@@ -1,0 +1,149 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+function globToUrls(glob: Record<string, any>) {
+  return Object.values(glob).map((m) => m.default.src);
+}
+
+const abstractImages = globToUrls(
+  import.meta.glob('../assets/abstract/**/*.{jpg,jpeg,png,gif,webp}', { eager: true })
+);
+const brandImages = globToUrls(
+  import.meta.glob('../assets/brand/**/*.{jpg,jpeg,png,gif,webp}', { eager: true })
+);
+const collageImages = globToUrls(
+  import.meta.glob('../assets/art/**/*.{jpg,jpeg,png,gif,webp}', { eager: true })
+);
+const editorialImages = globToUrls(
+  import.meta.glob('../assets/illustration/**/*.{jpg,jpeg,png,gif,webp}', { eager: true })
+);
+const generativeImages = globToUrls(
+  import.meta.glob('../assets/generative/**/*.{jpg,jpeg,png,gif,webp}', { eager: true })
+);
+const motionImages = globToUrls(
+  import.meta.glob('../assets/motion/**/*.{jpg,jpeg,png,gif,webp}', { eager: true })
+);
+const datavisImages = globToUrls(
+  import.meta.glob('../assets/datavisualization/**/*.{jpg,jpeg,png,gif,webp}', { eager: true })
+);
+
+const imageMap: Record<string, string[]> = {
+  abstract: abstractImages,
+  brand: brandImages,
+  digitalcollage: collageImages,
+  editorial: editorialImages,
+  generative: generativeImages,
+  motion: motionImages,
+  datavis: datavisImages,
+};
+---
+
+<Layout>
+  <div class="img-layer img-layer-a"></div>
+  <div class="img-layer img-layer-b"></div>
+
+  <style>
+    .img-layer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 700px;
+      height: 700px;
+      background-size: cover;
+      background-position: center;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 400ms ease;
+      z-index: -1;
+      transform: translate(-350px, -350px);
+    }
+  </style>
+
+  <div class="flex-1 flex items-center justify-center">
+    <nav>
+      <ul class="text-center text-3xl font-mono font-semibold uppercase leading-16">
+        <li><a href="/generative" data-category="generative">Generative</a></li>
+        <li><a href="/motion" data-category="motion">Motion</a></li>
+        <li><a href="/brand" data-category="brand">Brand</a></li>
+        <li><a href="/illustration" data-category="editorial">Editorial</a></li>
+        <li><a href="/datavis" data-category="datavis">Data Visualization</a></li>
+        <li><a href="/digitalcollage" data-category="digitalcollage">Digital Collage</a></li>
+        <li><a href="/abstract" data-category="abstract">Abstract</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <script define:vars={{ imageMap }}>
+    const layerA = document.querySelector('.img-layer-a');
+    const layerB = document.querySelector('.img-layer-b');
+    const layers = [layerA, layerB];
+    let activeIdx = 0; // index of the layer that will receive the NEXT image
+
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let lerpX = mouseX;
+    let lerpY = mouseY;
+    let rafId = null;
+
+    function pickRandom(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    function showImage(url) {
+      const incoming = layers[activeIdx];
+      const outgoing = layers[1 - activeIdx];
+      incoming.style.backgroundImage = `url("${url}")`;
+      incoming.style.opacity = '1';
+      outgoing.style.opacity = '0';
+      activeIdx = 1 - activeIdx;
+    }
+
+    function lerpTick() {
+      lerpX += (mouseX - lerpX) * 0.12;
+      lerpY += (mouseY - lerpY) * 0.12;
+      const x = lerpX - 350;
+      const y = lerpY - 350;
+      layerA.style.transform = `translate(${x}px, ${y}px)`;
+      layerB.style.transform = `translate(${x}px, ${y}px)`;
+      rafId = requestAnimationFrame(lerpTick);
+    }
+
+    function startLerp() {
+      if (!rafId) {
+        lerpX = mouseX;
+        lerpY = mouseY;
+        lerpTick();
+      }
+    }
+
+    function stopLerp() {
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+        rafId = null;
+      }
+    }
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    const nav = document.querySelector('[data-category]')?.closest('nav');
+    if (!nav) return;
+
+    nav.querySelectorAll('[data-category]').forEach((item) => {
+      item.addEventListener('mouseenter', () => {
+        const images = imageMap[item.dataset.category];
+        if (!images || images.length === 0) return;
+        showImage(pickRandom(images));
+        startLerp();
+      });
+    });
+
+    nav.addEventListener('mouseleave', () => {
+      layerA.style.opacity = '0';
+      layerB.style.opacity = '0';
+      stopLerp();
+    });
+  </script>
+</Layout>

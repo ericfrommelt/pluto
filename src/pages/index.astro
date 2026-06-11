@@ -1,149 +1,571 @@
 ---
+import "../styles/global.css";
 import Layout from '../layouts/Layout.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Lightbox from "../components/Lightbox.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { Image } from "astro:assets";
+import { MuxPlayer } from "@mux/mux-player-astro";
 
-function globToUrls(glob: Record<string, any>) {
-  return Object.values(glob).map((m) => m.default.src);
-}
+import generative01 from '../assets/generative/generative-01.png';
+import generative02 from '../assets/generative/generative-02.png';
+import generative03 from '../assets/generative/generative-03.png';
+import generative04 from '../assets/generative/generative-04.png';
+import generative05 from '../assets/generative/generative-05.png';
+import generative06 from '../assets/generative/generative-06.png';
+import generative07 from '../assets/generative/generative-07.png';
+import generative08 from '../assets/generative/generative-08.png';
+import generative09 from '../assets/generative/generative-09.png';
+import generative10 from '../assets/generative/generative-10.png';
+import generative11 from '../assets/generative/generative-11.png';
 
-const abstractImages = globToUrls(
-  import.meta.glob('../assets/abstract/**/*.{jpg,jpeg,png,gif,webp}', { eager: true })
-);
-const brandImages = globToUrls(
-  import.meta.glob('../assets/brand/**/*.{jpg,jpeg,png,gif,webp}', { eager: true })
-);
-const collageImages = globToUrls(
-  import.meta.glob('../assets/art/**/*.{jpg,jpeg,png,gif,webp}', { eager: true })
-);
-const editorialImages = globToUrls(
-  import.meta.glob('../assets/illustration/**/*.{jpg,jpeg,png,gif,webp}', { eager: true })
-);
-const generativeImages = globToUrls(
-  import.meta.glob('../assets/generative/**/*.{jpg,jpeg,png,gif,webp}', { eager: true })
-);
-const motionImages = globToUrls(
-  import.meta.glob('../assets/motion/**/*.{jpg,jpeg,png,gif,webp}', { eager: true })
-);
-const datavisImages = globToUrls(
-  import.meta.glob('../assets/datavisualization/**/*.{jpg,jpeg,png,gif,webp}', { eager: true })
-);
+import generationX01 from '../assets/generative/generation__x/generation-x-01.png';
+import generationX02 from '../assets/generative/generation__x/generation-x-02.png';
+import generationX03 from '../assets/generative/generation__x/generation-x-03.png';
+import generationX04 from '../assets/generative/generation__x/generation-x-04.png';
+import generationX05 from '../assets/generative/generation__x/generation-x-05.png';
+import generationX06 from '../assets/generative/generation__x/generation-x-06.png';
+import generationX07 from '../assets/generative/generation__x/generation-x-07.png';
+import generationX08 from '../assets/generative/generation__x/generation-x-08.png';
+import generationX09 from '../assets/generative/generation__x/generation-x-09.png';
+import generationX10 from '../assets/generative/generation__x/generation-x-10.png';
+import generationX11 from '../assets/generative/generation__x/generation-x-11.png';
+import generationX12 from '../assets/generative/generation__x/generation-x-12.png';
 
-const imageMap: Record<string, string[]> = {
-  abstract: abstractImages,
-  brand: brandImages,
-  digitalcollage: collageImages,
-  editorial: editorialImages,
-  generative: generativeImages,
-  motion: motionImages,
-  datavis: datavisImages,
-};
+import yoshiGo01 from '../assets/generative/yoshiGo/yoshi-go-01.png';
+
+import lsc01 from '../assets/generative/lsc/lsc-001.jpg';
+import lsc02 from '../assets/generative/lsc/lsc-002.jpg';
+import lsc03 from '../assets/generative/lsc/lsc-003.jpg';
+import lsc04 from '../assets/generative/lsc/lsc-004.jpg';
+import lsc05 from '../assets/generative/lsc/lsc-005.jpg';
+
+import technoportrait01 from '../assets/generative/technoportraits/TGFX-2025-001_TechnoPortraitsV1_10.png';
+import technoportrait02 from '../assets/generative/technoportraits/TGFX-2025-001_TechnoPortraitsV1_14.png';
+import technoportrait03 from '../assets/generative/technoportraits/TGFX-2025-001_TechnoPortraitsV1_21.png';
+import technoportrait04 from '../assets/generative/technoportraits/TGFX-2025-001_TechnoPortraitsV1_33.png';
+import technoportrait05 from '../assets/generative/technoportraits/TGFX-2025-001_TechnoPortraitsV1_44.png';
+import technoportrait06 from '../assets/generative/technoportraits/TGFX-2025-001_TechnoPortraitsV1_47.png';
+
+import imageFifty from '../assets/illustration/5Automations_7-9-2018-01.png';
+import imageFiftyOne from '../assets/illustration/5Automations_7-9-2018-02.png';
+import imageFiftyTwo from '../assets/illustration/automationsspreads-1.png';
+import imageFiftyThree from '../assets/illustration/automationsspreads-2.png';
+import imageFiftyFour from '../assets/illustration/MarchOfTheModels-Print-2560.png';
+import imageFiftyFive from '../assets/illustration/MarchOfTheModels-WEB.png';
+import imageFiftySix from '../assets/illustration/MarchOfTheModelsWeb.png';
+import imageFiftySeven from '../assets/illustration/citypages-get-cryphy-2x.png';
+import imageFiftyEight from '../assets/illustration/citypages-get-cryphy-situ-2x.png';
+import imageFiftyNine from '../assets/illustration/creative-computers-2x.png';
+import imageSixty from '../assets/illustration/creative_computers_photo-1024x715.jpg';
+import imageSixtyOne from '../assets/illustration/DataCenterGameTheory.png';
+import imageSixtyTwo from '../assets/illustration/espn-numbers-shotlink-2x.png';
+import imageSixtyThree from '../assets/illustration/espn-numbers-lakers-2x.png';
+import imageSixtyFour from '../assets/illustration/ShotLink_Photo.jpg';
+import imageSixtyFive from '../assets/illustration/numbers_lakers.jpg';
+import imageSixtySix from '../assets/illustration/ExplainableAI.png';
+import imageSixtySeven from '../assets/illustration/ExplainableAI_01-05-2021_Questionmarks.png';
+import imageSixtyEight from '../assets/illustration/fortune-quant-junkies-2x.png';
+import imageSixtyNine from '../assets/illustration/quant-junkies2.jpg';
+import imageSeventy from '../assets/illustration/6G@2x.png';
+import imageSeventyOne from '../assets/illustration/AI-General@2x.png';
+import imageSeventyTwo from '../assets/illustration/AI-Image-Recognition@2x.png';
+import imageSeventyThree from '../assets/illustration/Binary@2x.png';
+import imageSeventyFour from '../assets/illustration/TelecomNetwork@2x.png';
+import imageSeventyFive from '../assets/illustration/MoralityEconomics-PRINT.webp';
+import imageSeventySix from '../assets/illustration/MoralityEconomics-WEB.png';
+import imageEightySix from '../assets/illustration/oculus-rift-2x.png';
+import imageEightySeven from '../assets/illustration/styleshifters-2x.png'
+import imageEightyEight from '../assets/illustration/ibm-pure-data-2x.png'
+import imageEightyNine from '../assets/illustration/ibm-pure-data-inset1-2x.png'
+import imageNinety from '../assets/illustration/ibm-pure-data-inset2-2x.png'
+import imageNinetyOne from '../assets/illustration/ibm-pure-data-situ-2x.png'
+
+import imageThirtyFour from '../assets/art/PlusMinus-01.png';
+import imageThirtyFive from '../assets/art/PlusMinus-02.png';
+import untitledPanic01 from '../assets/abstract/Untitled-Panic01.png';
+import untitledPanic02 from '../assets/abstract/Untitled-Panic02.png';
+import untitledPanic03 from '../assets/abstract/Untitled-Panic03.png';
+import untitledPanic04 from '../assets/abstract/Untitled-Panic04.png';
+import untitledPanic05 from '../assets/abstract/Untitled-Panic05.png';
+import artificialIntelligence from '../assets/abstract/artificial-intelligence-2x.png';
+import breach from '../assets/abstract/breach-2x.png';
+import breakout from '../assets/abstract/breakout-2x.png';
+import bunker from '../assets/abstract/bunker-2x.png';
+import controlApparatus from '../assets/abstract/control-apparatus-2x.png';
+import cpu from '../assets/abstract/cpu-2x.png';
+import dsp from '../assets/abstract/dsp-2x.png';
+import encryptionKey from '../assets/abstract/encryption-key-2x.png';
+import everyday04012016 from '../assets/abstract/everyday_04-01-2016@4x.png';
+import everyday04012020 from '../assets/abstract/everyday_04-01-2020@4x.png';
+import everyday04022016 from '../assets/abstract/everyday_04-02-2016@4x.png';
+import everyday04032016 from '../assets/abstract/everyday_04-03-2016@4x.png';
+import everyday04042016 from '../assets/abstract/everyday_04-04-2016@4x.png';
+import everyday04052016 from '../assets/abstract/everyday_04-05-2016@4x.png';
+import everyday04072016 from '../assets/abstract/everyday_04-07-2016@4x.png';
+import everyday04082016 from '../assets/abstract/everyday_04-08-2016@4x.png';
+import everyday04092016 from '../assets/abstract/everyday_04-09-2016@4x.png';
+import everyday04102016 from '../assets/abstract/everyday_04-10-2016@4x.png';
+import everyday04112016 from '../assets/abstract/everyday_04-11-2016@4x.png';
+import everyday04122016 from '../assets/abstract/everyday_04-12-2016@4x.png';
+import everyday04132016 from '../assets/abstract/everyday_04-13-2016@4x.png';
+import everyday04142016 from '../assets/abstract/everyday_04-14-2016@4x.png';
+import everyday04152016 from '../assets/abstract/everyday_04-15-2016@4x.png';
+import everyday04162016 from '../assets/abstract/everyday_04-16-2016@4x.png';
+import everyday04172016 from '../assets/abstract/everyday_04-17-2016@4x.png';
+import everyday04182016 from '../assets/abstract/everyday_04-18-2016@4x.png';
+import everyday04192016 from '../assets/abstract/everyday_04-19-2016@4x.png';
+import everyday04202016 from '../assets/abstract/everyday_04-20-2016@4x.png';
+import everyday04212016 from '../assets/abstract/everyday_04-21-2016@4x.png';
+import everyday04222016 from '../assets/abstract/everyday_04-22-2016@4x.png';
+import everyday04232016 from '../assets/abstract/everyday_04-23-2016@4x.png';
+import everyday04242016 from '../assets/abstract/everyday_04-24-2016@4x.png';
+import everyday04252016 from '../assets/abstract/everyday_04-25-2016@4x.png';
+import everyday04262016 from '../assets/abstract/everyday_04-26-2016@4x.png';
+import everyday04272016 from '../assets/abstract/everyday_04-27-2016@4x.png';
+import everyday04282016 from '../assets/abstract/everyday_04-28-2016@4x.png';
+import everyday04292016 from '../assets/abstract/everyday_04-29-2016@4x.png';
+import everyday04302016 from '../assets/abstract/everyday_04-30-2016@4x.png';
+import everyday05012016 from '../assets/abstract/everyday_05-01-2016@4x.png';
+import everyday05042016 from '../assets/abstract/everyday_05-04-2016@4x.png';
+import everyday05052016 from '../assets/abstract/everyday_05-05-2016@4x.png';
+import everyday05062016 from '../assets/abstract/everyday_05-06-2016@4x.png';
+import everyday05072016 from '../assets/abstract/everyday_05-07-2016@4x.png';
+import everyday05082016 from '../assets/abstract/everyday_05-08-2016@4x.png';
+import everyday05102016 from '../assets/abstract/everyday_05-10-2016@4x.png';
+import fairfax from '../assets/abstract/fairfax-2x.png';
+import google from '../assets/abstract/google-2x.png';
+import gps from '../assets/abstract/gps-2x.png';
+import integratedCircuit from '../assets/abstract/integrated-circuit-2x.png';
+import intercept from '../assets/abstract/intercept-2x.png';
+import lSystem from '../assets/abstract/l-system-2x.png';
+import leak from '../assets/abstract/leak-2x.png';
+import logicInternal from '../assets/abstract/logic-internal-2x.png';
+import loop from '../assets/abstract/loop-2x.png';
+import namicsTransformation from '../assets/abstract/namics_transformation-2x.png';
+import networkObject1 from '../assets/abstract/network-object1-2x.png';
+import networkObject2 from '../assets/abstract/network-object2-2x.png';
+import norad from '../assets/abstract/norad-2x.png';
+import observatory from '../assets/abstract/observatory-2x.png';
+import resistance from '../assets/abstract/resistance-2x.png';
+import rigged from '../assets/abstract/rigged-2x.png';
+import source from '../assets/abstract/source-2x.png';
+import squared01 from '../assets/abstract/squared-01-2x.png';
+import squared02 from '../assets/abstract/squared-02-2x.png';
+import squared03 from '../assets/abstract/squared-03-2x.png';
+import structure from '../assets/abstract/structure-2x.png';
+import unit from '../assets/abstract/unit-2x.png';
+import wiretap from '../assets/abstract/wiretap-2x.png';
+import fieldSeries01 from '../assets/abstract/Field_Series_01b.jpg';
+import fieldSeries02 from '../assets/abstract/Field_Series_02b.png';
+import fieldSeries03 from '../assets/abstract/Field_Series_03.png';
+import geneticDeflection from '../assets/abstract/GeneticDeflection-2x.png';
+import hallOfJustice from '../assets/abstract/HallOfJustice-2x.png';
+import scales from '../assets/abstract/Scales-2x.png';
+
+import abs202201 from '../assets/abstract/2022/2022-01.png';
+import abs202202 from '../assets/abstract/2022/2022-02.png';
+import abs202203 from '../assets/abstract/2022/2022-16.png';
+import abs202204 from '../assets/abstract/2022/2022-17.png';
+import abs202205 from '../assets/abstract/2022/2022-23.png';
+import abs202206 from '../assets/abstract/2022/2022-24.png';
+import abs202207 from '../assets/abstract/2022/2022-26.png';
+import abs202208 from '../assets/abstract/2022/2022-27.png';
+import abs202209 from '../assets/abstract/2022/2022-28.png';
+import abs202210 from '../assets/abstract/2022/2022-31.png';
+import abs202211 from '../assets/abstract/2022/2022-32.png';
+import abs202212 from '../assets/abstract/2022/2022-33.png';
+import abs202213 from '../assets/abstract/2022/2022-34.png';
+import abs202214 from '../assets/abstract/2022/2022-35.png';
+
+import collapse01 from '../assets/motion/collapse-01.png';
+import collapse02 from '../assets/motion/collapse-02.png';
+import collapse03 from '../assets/motion/collapse-03.png';
+import collapse04 from '../assets/motion/collapse-04.png';
+import collapse05 from '../assets/motion/collapse-05.png';
+import collapse06 from '../assets/motion/collapse-06.png';
+import collapse07 from '../assets/motion/collapse-07.png';
+import collapse08 from '../assets/motion/collapse-08.png';
+
 ---
 
-<Layout>
-  <div class="img-layer img-layer-a"></div>
-  <div class="img-layer img-layer-b"></div>
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Layout>
+			<div class="container mx-auto p-8">
+				<!-- +- -->
+				 <h3 class="font-bold my-16">Plus Minus</h3>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+					<Image src={imageThirtyFour} width="1224" height="1584" alt="Untitled"></Image>
+					<Image src={imageThirtyFive} width="1224" height="1584" alt="Untitled"></Image>
+				</div>
+				<!-- Collapse -->
+                <div class="my32">
+                    <p class="my-8">Collapse</p>
+                    <div class="grid grid-cols-1 md:grid-cols-1 gap-8 mb-8">
+                        <Image src={collapse01} width="3556" height="2000" alt="Collapse style frame"></Image>
+					</div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                        <Image src={collapse02} width="3556" height="2000" alt="Collapse style frame"></Image>
+                        <Image src={collapse05} width="3556" height="2000" alt="Collapse style frame"></Image>
+                        <Image src={collapse06} width="3556" height="2000" alt="Collapse style frame"></Image>
+                        <Image src={collapse07} width="3556" height="2000" alt="Collapse style frame"></Image>
+                        <!-- <Image src={collapse09} width="3556" height="2000" alt="Collapse style frame"></Image> -->
+                    </div>
+                </div>
+				<h3 class="font-bold mt-16">yoshiGo!</h3>
+				<p class="mb-16">AV project built with Java / Processing / Midi</p>
+				<!-- YoshiGo video -->
+				<div class="grid grid-cols-1 gap-8 mb-8">
+					<MuxPlayer
+					playbackId="dL1LKqb00NTuKioyY3maUY1HP7K8DpU72mGgT1Ff01D01U"
+					metadata={{ video_title: 'YoshiGo by Eric Frommelt' }}
+					style={{
+						display: 'block',
+						aspectRatio: '16/9',
+						backgroundColor: '#000',
+						margin: '1rem 0 2rem',
+					}}
+						primaryColor="#f2ec3a"
+						secondaryColor="#0caa09"
+						accentColor="#6e1e99"
+						defaultShowRemainingTime={true}
+						/>
+					</div>
+					
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+						<MuxPlayer
+						playbackId="a5ta2wI3L01b9oBXVGgEt76WSKctBOjcijqaGfpZfwIk"
+						metadata={{ video_title: 'YoshiGo by Eric Frommelt' }}
+						style={{
+							display: 'block',
+							aspectRatio: '1/1',
+							backgroundColor: '#000',
+							margin: '1rem 0 2rem',
+						}}
+					primaryColor="#f2ec3a"
+					secondaryColor="#0caa09"
+					accentColor="#6e1e99"
+					defaultShowRemainingTime={true}
+					/>
+					<Image src={yoshiGo01} alt="YoshiGo" class="w-full h-auto" />
+				</div>
+				
+				<h3 class="font-bold">generation__x</h3>
+				<p class="mb-16">Generative art project released on  fxhash</p>
+				<!-- Generation X -->
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
+					<Image src={generationX02} alt="Generation X 02" class="w-full h-auto" />
+					<Image src={generationX03} alt="Generation X 03" class="w-full h-auto" />
+					<Image src={generationX04} alt="Generation X 04" class="w-full h-auto" />
+					<Image src={generationX05} alt="Generation X 05" class="w-full h-auto" />
+					<Image src={generationX06} alt="Generation X 06" class="w-full h-auto" />
+					<Image src={generationX07} alt="Generation X 07" class="w-full h-auto" />
+					<Image src={generationX08} alt="Generation X 08" class="w-full h-auto" />
+					<Image src={generationX09} alt="Generation X 09" class="w-full h-auto" />
+					<Image src={generationX10} alt="Generation X 10" class="w-full h-auto" />
+					<Image src={generationX11} alt="Generation X 11" class="w-full h-auto" />
+					<Image src={generationX12} alt="Generation X 12" class="w-full h-auto" />
+					<Image src={generationX01} alt="Generation X 01" class="w-full h-auto" />
+				</div>
+				
+				<!-- Untitled Panic -->
+				<h3 class="font-bold">Panic Now</h3>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
+					<Image src={untitledPanic01} alt="Untitled Panic 01" class="w-full h-auto" />
+					<Image src={untitledPanic02} alt="Untitled Panic 02" class="w-full h-auto" />
+					<Image src={untitledPanic03} alt="Untitled Panic 03" class="w-full h-auto" />
+					<Image src={untitledPanic04} alt="Untitled Panic 04" class="w-full h-auto" />
+					<Image src={untitledPanic05} alt="Untitled Panic 05" class="w-full h-auto" />
+				</div>
+				<!-- 2022 -->
+				 <h3 class="font-bold">Dominate the Color Space</h3>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
+					<Image src={abs202201} alt="Untitled" class="w-full h-auto" />
+					<Image src={abs202202} alt="Untitled" class="w-full h-auto" />
+					<Image src={abs202203} alt="Untitled" class="w-full h-auto" />
+					<Image src={abs202204} alt="Untitled" class="w-full h-auto" />
+					<Image src={abs202205} alt="Untitled" class="w-full h-auto" />
+					<Image src={abs202206} alt="Untitled" class="w-full h-auto" />
+					<Image src={abs202207} alt="Untitled" class="w-full h-auto" />
+					<Image src={abs202208} alt="Untitled" class="w-full h-auto" />
+					<Image src={abs202209} alt="Untitled" class="w-full h-auto" />
+					<Image src={abs202210} alt="Untitled" class="w-full h-auto" />
+					<Image src={abs202211} alt="Untitled" class="w-full h-auto" />
+					<Image src={abs202212} alt="Untitled" class="w-full h-auto" />
+					<Image src={abs202213} alt="Untitled" class="w-full h-auto" />
+					<Image src={abs202214} alt="Untitled" class="w-full h-auto" />
+					
+				</div>
+				
+				<h3 class="font-bold">Code Sketches</h3>
+				<!-- Generative works -->
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+					<Image src={generative01} alt="Generative 01" class="w-full h-auto" />
+					<Image src={generative02} alt="Generative 02" class="w-full h-auto" />
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+					<Image src={generative03} alt="Generative 03" class="w-full h-auto" />
+					<Image src={generative04} alt="Generative 04" class="w-full h-auto" />
+					<Image src={generative05} alt="Generative 05" class="w-full h-auto" />
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+					<Image src={generative06} alt="Generative 06" class="w-full h-auto" />
+					<Image src={generative07} alt="Generative 07" class="w-full h-auto" />
+					<Image src={generative08} alt="Generative 08" class="w-full h-auto" />
+					<Image src={generative09} alt="Generative 09" class="w-full h-auto" />
+					<Image src={generative10} alt="Generative 10" class="w-full h-auto" />
+					<Image src={generative11} alt="Generative 11" class="w-full h-auto" />
+				</div>
 
-  <style>
-    .img-layer {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 700px;
-      height: 700px;
-      background-size: cover;
-      background-position: center;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 400ms ease;
-      z-index: -1;
-      transform: translate(-350px, -350px);
-    }
-  </style>
+				<div class="container mx-auto p-8">
+				<h3 class="font-bold">Editorial</h3>
+				<p class="my-8">March of the Models<br />F&D</p>
+				<!-- March of the Models -->
+				<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xxl:grid-cols-2 gap-8 mb-8">
+					<Image src={imageFiftyFive} width="2656" height="1080" alt="March of the Models"></Image>
+				</div>
+				<div class="grid grid-cols-2 gap-8 mb-8">
+					<Image src={imageFiftyFour} width="2560" height="1752" alt="March of the Models"></Image>
+					<Image src={imageFiftySix} width="1471" height="1475" alt="March of the Models"></Image>
+				</div>
+				
+				<!-- Reconnecting Morality -->
+				<p class="my-8">Reconnecting Morality<br />F&D</p>
+				<div class="grid grid-cols-1 gap-8 mb-8">
+					<Image src={imageSeventySix} width="2656" height="1080" alt="Reconnecting Morality"></Image>
+				</div>
+				
+				<!-- Spectrum -->
+				<p class="my-8">AI Image Recognition<br />IEEE Spectrum</p>
+				<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xxl:grid-cols-2 gap-8 mb-8">
+					<Image src={imageSeventyTwo} width="2800" height="2100" alt="AI Image Recognition"></Image>
+				</div>
+				<div class="grid grid-cols-2 gap-8 mb-8">
+					<div>
+						<p class="my-8">6G</p>
+						<Image src={imageSeventy} width="2800" height="2100" alt="6G"></Image>
+					</div>
+					<div>
+						<p class="my-8">AI</p>
+						<Image src={imageSeventyOne} width="2800" height="2100" alt="AI"></Image>
+					</div>
+					<div>
+						<p class="my-8">Binary</p>
+						<Image src={imageSeventyThree} width="2800" height="2100" alt="Binary"></Image>
+					</div>
+					<div>
+						<p class="my-8">Telecom Network</p>
+						<Image src={imageSeventyFour} width="2800" height="2100" alt="Telecom Network"></Image>
+					</div>
+				</div>
 
-  <div class="flex-1 flex items-center justify-center">
-    <nav>
-      <ul class="text-center text-3xl font-mono font-semibold uppercase leading-16">
-        <li><a href="/generative" data-category="generative">Generative</a></li>
-        <li><a href="/motion" data-category="motion">Motion</a></li>
-        <li><a href="/brand" data-category="brand">Brand</a></li>
-        <li><a href="/illustration" data-category="editorial">Editorial</a></li>
-        <li><a href="/datavis" data-category="datavis">Data Visualization</a></li>
-        <li><a href="/digitalcollage" data-category="digitalcollage">Digital Collage</a></li>
-        <li><a href="/abstract" data-category="abstract">Abstract</a></li>
-      </ul>
-    </nav>
-  </div>
+				<!-- Five AI Automations -->
+				<p class="my-8">Five Automations <br />Slack</p>
+				<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xxl:grid-cols-3 gap-8 mb-8">
+					<Image src={imageFifty} width="2560" height="1707" alt="Five AI Automations"></Image>
+					<Image src={imageFiftyOne} width="2560" height="1707" alt="Five AI Automations"></Image>
+					<Image src={imageFiftyTwo} width="1440" height="960" alt="Five AI Automations"></Image>
+					<Image src={imageFiftyThree} width="1440" height="960" alt="Five AI Automations"></Image>
+				</div>
 
-  <script define:vars={{ imageMap }}>
-    const layerA = document.querySelector('.img-layer-a');
-    const layerB = document.querySelector('.img-layer-b');
-    const layers = [layerA, layerB];
-    let activeIdx = 0; // index of the layer that will receive the NEXT image
+				<!-- City Pages -->
+				<p class="my-8">Cryphy Club Nights <br />City Pages</p>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xxl:grid-cols-2 gap-8 mb-8">
+					<Image src={imageFiftySeven} width="2560" height="2945" alt="City Pages"></Image>
+					<Image src={imageFiftyEight} width="2560" height="2945" alt="City Pages"></Image>
+				</div>
 
-    let mouseX = window.innerWidth / 2;
-    let mouseY = window.innerHeight / 2;
-    let lerpX = mouseX;
-    let lerpY = mouseY;
-    let rafId = null;
+				<!-- Creative Computers -->
+				<p class="my-8">Creative Computers <br />USC</p>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xxl:grid-cols-2 gap-8 mb-8">
+					<Image src={imageFiftyNine} width="2560" height="1851" alt="Creative Computers"></Image>
+					<Image src={imageSixty} width="1024" height="715" alt="Creative Computers"></Image>
+				</div>
 
-    function pickRandom(arr) {
-      return arr[Math.floor(Math.random() * arr.length)];
-    }
+				<!-- Data Center Game Theory -->
+				<p class="my-8">Game Theory in the Data Center<br />IEEE Spectrum</p>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xxl:grid-cols-2 gap-8 mb-8">
+					<Image src={imageSixtyOne} width="2560" height="3354" alt="Game Theory in the Data Center"></Image>
+				</div>
 
-    function showImage(url) {
-      const incoming = layers[activeIdx];
-      const outgoing = layers[1 - activeIdx];
-      incoming.style.backgroundImage = `url("${url}")`;
-      incoming.style.opacity = '1';
-      outgoing.style.opacity = '0';
-      activeIdx = 1 - activeIdx;
-    }
+				<!-- Oculus Gaming -->
+				<p class="my-8">Oculus Gaming <br />Fast Company</p>
+				<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xxl:grid-cols-1 gap-8 mb-8">
+					<Image src={imageEightySix} width="2560" height="2057" alt="Oculus Gaming"></Image>
+				</div>
+				
+				<!-- ESPN Numbers -->
+				<p class="my-8">Numbers <br />ESPN</p>
+				<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xxl:grid-cols-1 gap-8 mb-8">
+					<Image src={imageSixtyTwo} width="2560" height="893" alt="ESPN Numbers column"></Image>
+					<Image src={imageSixtyThree} width="2560" height="891" alt="ESPN Numbers column"></Image>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xxl:grid-cols-2 gap-8 mb-8">
+					<Image src={imageSixtyFour} width="1000" height="667" alt="ESPN Numbers column"></Image>
+					<Image src={imageSixtyFive} width="1000" height="667" alt="ESPN Numbers column"></Image>
+				</div>
+				
+				<!-- Explainable AI -->
+				<p class="my-8">Explainable AI <br />IEEE Spectrum</p>
+				<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xxl:grid-cols-1 gap-8 mb-8">
+					<Image src={imageSixtySix} width="2560" height="1920" alt="Explainable AI"></Image>
+					<Image src={imageSixtySeven} width="2560" height="774" alt="Explainable AI - 4 question marks"></Image>
+				</div>
+				
+				<!-- Quant Junkies -->
+				<p class="my-8">Quant Junkies <br />Fortune</p>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xxl:grid-cols-2 gap-8 mb-8">
+					<Image src={imageSixtyEight} width="2560" height="2177" alt="Quant Junkies"></Image>
+					<Image src={imageSixtyNine} width="1000" height="1250" alt="Quant Junkies"></Image>
+				</div>
 
-    function lerpTick() {
-      lerpX += (mouseX - lerpX) * 0.12;
-      lerpY += (mouseY - lerpY) * 0.12;
-      const x = lerpX - 350;
-      const y = lerpY - 350;
-      layerA.style.transform = `translate(${x}px, ${y}px)`;
-      layerB.style.transform = `translate(${x}px, ${y}px)`;
-      rafId = requestAnimationFrame(lerpTick);
-    }
+				<!-- Styleshifters -->
+				<p class="my-8">Style Shifters</p>
+				<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xxl:grid-cols-1 gap-8 mb-8">
+					<Image src={imageEightySeven} width="2560" height="3311" alt="Styleshifters"></Image>
+				</div>
 
-    function startLerp() {
-      if (!rafId) {
-        lerpX = mouseX;
-        lerpY = mouseY;
-        lerpTick();
-      }
-    }
+				<!-- IBM Pure Data -->
+				<p class="my-8">Pure Data <br />IBM</p>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xxl:grid-cols-2 gap-8 mb-8">
+					<Image src={imageEightyEight} width="2560" height="2560" alt="IBM Pure Data"></Image>
+					<Image src={imageEightyNine} width="2560" height="1416" alt="IBM Pure Data"></Image>
+					<Image src={imageNinety} width="2560" height="1725" alt="IBM Pure Data"></Image>
+					<Image src={imageNinetyOne} width="2560" height="3526" alt="IBM Pure Data"></Image>
+				</div>
 
-    function stopLerp() {
-      if (rafId) {
-        cancelAnimationFrame(rafId);
-        rafId = null;
-      }
-    }
+				<h3 class="font-bold">Selected Abstract Works</h3>
+				
+				<!-- Everyday — April 2016 -->
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 my-16">
+					<Image src={everyday04012016} alt="Everyday 04-01-2016" class="w-full h-auto" />
+					<Image src={everyday04022016} alt="Everyday 04-02-2016" class="w-full h-auto" />
+					<Image src={everyday04032016} alt="Everyday 04-03-2016" class="w-full h-auto" />
+					<Image src={everyday04042016} alt="Everyday 04-04-2016" class="w-full h-auto" />
+					<Image src={everyday04052016} alt="Everyday 04-05-2016" class="w-full h-auto" />
+					<Image src={everyday04072016} alt="Everyday 04-07-2016" class="w-full h-auto" />
+					<Image src={everyday04082016} alt="Everyday 04-08-2016" class="w-full h-auto" />
+					<Image src={everyday04092016} alt="Everyday 04-09-2016" class="w-full h-auto" />
+					<Image src={everyday04102016} alt="Everyday 04-10-2016" class="w-full h-auto" />
+					<Image src={everyday04112016} alt="Everyday 04-11-2016" class="w-full h-auto" />
+					<Image src={everyday04122016} alt="Everyday 04-12-2016" class="w-full h-auto" />
+					<Image src={everyday04132016} alt="Everyday 04-13-2016" class="w-full h-auto" />
+					<Image src={everyday04142016} alt="Everyday 04-14-2016" class="w-full h-auto" />
+					<Image src={everyday04152016} alt="Everyday 04-15-2016" class="w-full h-auto" />
+					<Image src={everyday04162016} alt="Everyday 04-16-2016" class="w-full h-auto" />
+					<Image src={everyday04172016} alt="Everyday 04-17-2016" class="w-full h-auto" />
+					<Image src={everyday04182016} alt="Everyday 04-18-2016" class="w-full h-auto" />
+					<Image src={everyday04192016} alt="Everyday 04-19-2016" class="w-full h-auto" />
+					<Image src={everyday04202016} alt="Everyday 04-20-2016" class="w-full h-auto" />
+					<Image src={everyday04212016} alt="Everyday 04-21-2016" class="w-full h-auto" />
+					<Image src={everyday04222016} alt="Everyday 04-22-2016" class="w-full h-auto" />
+					<Image src={everyday04232016} alt="Everyday 04-23-2016" class="w-full h-auto" />
+					<Image src={everyday04242016} alt="Everyday 04-24-2016" class="w-full h-auto" />
+					<Image src={everyday04252016} alt="Everyday 04-25-2016" class="w-full h-auto" />
+					<Image src={everyday04262016} alt="Everyday 04-26-2016" class="w-full h-auto" />
+					<Image src={everyday04272016} alt="Everyday 04-27-2016" class="w-full h-auto" />
+					<Image src={everyday04282016} alt="Everyday 04-28-2016" class="w-full h-auto" />
+					<Image src={everyday04292016} alt="Everyday 04-29-2016" class="w-full h-auto" />
+					<Image src={everyday04302016} alt="Everyday 04-30-2016" class="w-full h-auto" />
+				</div>
 
-    document.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    });
+				<!-- Everyday — May 2016 + 2020 -->
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 my-16">
+					<Image src={everyday05012016} alt="Everyday 05-01-2016" class="w-full h-auto" />
+					<Image src={everyday05042016} alt="Everyday 05-04-2016" class="w-full h-auto" />
+					<Image src={everyday05052016} alt="Everyday 05-05-2016" class="w-full h-auto" />
+					<Image src={everyday05062016} alt="Everyday 05-06-2016" class="w-full h-auto" />
+					<Image src={everyday05072016} alt="Everyday 05-07-2016" class="w-full h-auto" />
+					<Image src={everyday05082016} alt="Everyday 05-08-2016" class="w-full h-auto" />
+					<Image src={everyday05102016} alt="Everyday 05-10-2016" class="w-full h-auto" />
+					<Image src={everyday04012020} alt="Everyday 04-01-2020" class="w-full h-auto" />
+				</div>
 
-    const nav = document.querySelector('[data-category]')?.closest('nav');
-    if (!nav) return;
+				<!-- Field Series -->
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 my-16">
+					<Image src={fieldSeries01} alt="Field Series 01" class="w-full h-auto" />
+					<Image src={fieldSeries02} alt="Field Series 02" class="w-full h-auto" />
+					<Image src={fieldSeries03} alt="Field Series 03" class="w-full h-auto" />
+				</div>
 
-    nav.querySelectorAll('[data-category]').forEach((item) => {
-      item.addEventListener('mouseenter', () => {
-        const images = imageMap[item.dataset.category];
-        if (!images || images.length === 0) return;
-        showImage(pickRandom(images));
-        startLerp();
-      });
-    });
+				<!-- Squared -->
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 my-16">
+					<Image src={squared01} alt="Squared 01" class="w-full h-auto" />
+					<Image src={squared02} alt="Squared 02" class="w-full h-auto" />
+					<Image src={squared03} alt="Squared 03" class="w-full h-auto" />
+				</div>
 
-    nav.addEventListener('mouseleave', () => {
-      layerA.style.opacity = '0';
-      layerB.style.opacity = '0';
-      stopLerp();
-    });
-  </script>
-</Layout>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
+                    <Image src={artificialIntelligence} alt="Artificial Intelligence" class="w-full h-auto" />
+                    <Image src={breach} alt="Breach" class="w-full h-auto" />
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
+                    <Image src={google} alt="Google" class="w-full h-auto" />
+                    <Image src={gps} alt="GPS" class="w-full h-auto" />
+                </div>
+				<!-- Tech / Surveillance series -->
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 my-16">
+					<Image src={breakout} alt="Breakout" class="w-full h-auto" />
+					<Image src={bunker} alt="Bunker" class="w-full h-auto" />
+					<Image src={controlApparatus} alt="Control Apparatus" class="w-full h-auto" />
+					<Image src={cpu} alt="CPU" class="w-full h-auto" />
+					<Image src={dsp} alt="DSP" class="w-full h-auto" />
+					<Image src={encryptionKey} alt="Encryption Key" class="w-full h-auto" />
+					<Image src={integratedCircuit} alt="Integrated Circuit" class="w-full h-auto" />
+					<Image src={loop} alt="Loop" class="w-full h-auto" />
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
+					<Image src={observatory} alt="Observatory" class="w-full h-auto" />
+                    <Image src={intercept} alt="Intercept" class="w-full h-auto" />
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
+					<Image src={fairfax} alt="Fairfax" class="w-full h-auto" />
+					<Image src={resistance} alt="Resistance" class="w-full h-auto" />
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
+                    <Image src={logicInternal} alt="Logic Internal" class="w-full h-auto" />
+					<Image src={lSystem} alt="L-System" class="w-full h-auto" />
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
+					<Image src={leak} alt="Leak" class="w-full h-auto" />
+					<Image src={norad} alt="NORAD" class="w-full h-auto" />
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
+					<Image src={rigged} alt="Rigged" class="w-full h-auto" />
+					<Image src={namicsTransformation} alt="Namics Transformation" class="w-full h-auto" />
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
+                    <Image src={source} alt="Source" class="w-full h-auto" />
+                    <Image src={unit} alt="Unit" class="w-full h-auto" />
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
+                    <Image src={networkObject1} alt="Network Object 1" class="w-full h-auto" />
+                    <Image src={networkObject2} alt="Network Object 2" class="w-full h-auto" />
+                </div>
+                
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
+					<Image src={structure} alt="Structure" class="w-full h-auto" />
+					<Image src={wiretap} alt="Wiretap" class="w-full h-auto" />
+				</div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 my-16">
+                    <Image src={geneticDeflection} alt="Genetic Deflection" class="w-full h-auto" />
+                    <Image src={hallOfJustice} alt="Hall of Justice" class="w-full h-auto" />
+                    <Image src={scales} alt="Scales" class="w-full h-auto" />
+
+                </div>
+
+
+			</div>
+			<Lightbox />
+		</Layout>
+	</body>
+</html>
