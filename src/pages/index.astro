@@ -2,10 +2,8 @@
 import "../styles/global.css";
 import Layout from '../layouts/Layout.astro';
 import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
 import Lightbox from "../components/Lightbox.astro";
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { SITE_DESCRIPTION, SITE_TITLE, SITE_INTRO } from '../consts';
 import { Image } from "astro:assets";
 import { MuxPlayer } from "@mux/mux-player-astro";
 
@@ -36,19 +34,6 @@ import generationX12 from '../assets/generative/generation__x/generation-x-12.pn
 
 import yoshiGo01 from '../assets/generative/yoshiGo/yoshi-go-01.png';
 
-import lsc01 from '../assets/generative/lsc/lsc-001.jpg';
-import lsc02 from '../assets/generative/lsc/lsc-002.jpg';
-import lsc03 from '../assets/generative/lsc/lsc-003.jpg';
-import lsc04 from '../assets/generative/lsc/lsc-004.jpg';
-import lsc05 from '../assets/generative/lsc/lsc-005.jpg';
-
-import technoportrait01 from '../assets/generative/technoportraits/TGFX-2025-001_TechnoPortraitsV1_10.png';
-import technoportrait02 from '../assets/generative/technoportraits/TGFX-2025-001_TechnoPortraitsV1_14.png';
-import technoportrait03 from '../assets/generative/technoportraits/TGFX-2025-001_TechnoPortraitsV1_21.png';
-import technoportrait04 from '../assets/generative/technoportraits/TGFX-2025-001_TechnoPortraitsV1_33.png';
-import technoportrait05 from '../assets/generative/technoportraits/TGFX-2025-001_TechnoPortraitsV1_44.png';
-import technoportrait06 from '../assets/generative/technoportraits/TGFX-2025-001_TechnoPortraitsV1_47.png';
-
 import imageFifty from '../assets/illustration/5Automations_7-9-2018-01.png';
 import imageFiftyOne from '../assets/illustration/5Automations_7-9-2018-02.png';
 import imageFiftyTwo from '../assets/illustration/automationsspreads-1.png';
@@ -74,7 +59,6 @@ import imageSeventyOne from '../assets/illustration/AI-General@2x.png';
 import imageSeventyTwo from '../assets/illustration/AI-Image-Recognition@2x.png';
 import imageSeventyThree from '../assets/illustration/Binary@2x.png';
 import imageSeventyFour from '../assets/illustration/TelecomNetwork@2x.png';
-import imageSeventyFive from '../assets/illustration/MoralityEconomics-PRINT.webp';
 import imageSeventySix from '../assets/illustration/MoralityEconomics-WEB.png';
 import imageEightySix from '../assets/illustration/oculus-rift-2x.png';
 import imageEightySeven from '../assets/illustration/styleshifters-2x.png'
@@ -182,12 +166,28 @@ import abs202214 from '../assets/abstract/2022/2022-35.png';
 
 import collapse01 from '../assets/motion/collapse-01.png';
 import collapse02 from '../assets/motion/collapse-02.png';
-import collapse03 from '../assets/motion/collapse-03.png';
-import collapse04 from '../assets/motion/collapse-04.png';
 import collapse05 from '../assets/motion/collapse-05.png';
 import collapse06 from '../assets/motion/collapse-06.png';
 import collapse07 from '../assets/motion/collapse-07.png';
-import collapse08 from '../assets/motion/collapse-08.png';
+
+import marketcorrection01 from '../assets/illustration/MarketCorrection_1.png';
+import marketcorrection02 from '../assets/illustration/MarketCorrection_2.png';
+import marketcorrection03 from '../assets/illustration/MarketCorrection_3.png';
+
+import gpu01 from '../assets/motion/GPUUUUU_01.png';
+import gpu02 from '../assets/motion/GPUUUUU_02.png';
+import gpu03 from '../assets/motion/GPUUUUU_03.png';
+import gpu04 from '../assets/motion/GPUUUUU_04.png';
+import gpu05 from '../assets/motion/GPUUUUU_05.png';
+import gpu06 from '../assets/motion/GPUUUUU_06.png';
+import gpu07 from '../assets/motion/GPUUUUU_07.png';
+import gpu08 from '../assets/motion/GPUUUUU_08.png';
+import gpu09 from '../assets/motion/GPUUUUU_09.png';
+import gpu10 from '../assets/motion/GPUUUUU_10.png';
+import gpu11 from '../assets/motion/GPUUUUU_11.png';
+import gpu12 from '../assets/motion/GPUUUUU_12.png';
+import gpu13 from '../assets/motion/GPUUUUU_13.png';
+
 
 ---
 
@@ -199,8 +199,18 @@ import collapse08 from '../assets/motion/collapse-08.png';
 	<body>
 		<Layout>
 			<div class="container mx-auto p-8">
+				<h2 class="my-32 leading-8 text-2xl md:text-4xl md:leading-11">{SITE_INTRO}</h2>
+				
+				<!-- Market Correction -->
+				<h3 class="font-bold my-16">Market Correction</h3>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+					<Image src={marketcorrection01} width="1080" height="1350" alt="Market Correction 1"></Image>
+					<Image src={marketcorrection02} width="1080" height="1350" alt="Market Correction 2"></Image>
+					<Image src={marketcorrection03} width="1080" height="1350" alt="Market Correction 3"></Image>
+				</div>
+
 				<!-- +- -->
-				 <h3 class="font-bold my-16">Plus Minus</h3>
+				<h3 class="font-bold my-16">Plus Minus</h3>
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
 					<Image src={imageThirtyFour} width="1224" height="1584" alt="Untitled"></Image>
 					<Image src={imageThirtyFive} width="1224" height="1584" alt="Untitled"></Image>
