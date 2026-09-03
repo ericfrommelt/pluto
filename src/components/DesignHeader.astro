@@ -1,0 +1,14 @@
+---
+import { SITE_TITLE } from '../consts';
+import HeaderLink from './HeaderLink.astro';
+import efIcon from '../assets/EF-HeaderIcon.svg';
+import efNameDesign from '../assets/ef-nameplate-design.svg';
+---
+
+<header class="flex items-center justify-between p-10">
+	<div class="flex items-center space-x-4">
+	<a href="/" class="flex items-center">
+		<img src={efNameDesign.src} alt="Logo" width={169} height={64} data-lightbox-ignore />
+	</a>
+	</div>
+</header>
