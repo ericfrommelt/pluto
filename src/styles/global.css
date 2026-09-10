@@ -5,12 +5,11 @@ body {
     font-family: var(--font-sans);
 }
 
-.ibm-plex-sans {
-  font-family: "IBM Plex Sans", sans-serif;
+.font-sans {
+  font-family: "Geist", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-variation-settings: "wdth" 100;
 }
 
 .font-mono {
@@ -21,14 +20,63 @@ body {
 }
 
 .font-display {
-  font-family: "Bodoni Moda", serif;
+  font-family: "Geist", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal;
 }
 
 @theme {
   --font-display: "Bodoni Moda", serif;
   --font-mono: "IBM Plex Mono", monospace;
-  --font-sans: "IBM Plex Sans", sans-serif;
+  --font-sans: "Geist", sans-serif;
+}
+
+/* Custom Portfolio Colors */
+.pantha-bg {
+  background-color: #fcfbf9;
+}
+
+.pantha-txt {
+  color: #373a44;
+}
+
+.pantha-txt-light {
+  color: #cdc9c5;
+}
+
+.pantha-yellow {
+  color: #fdb802;
+}
+
+.pantha-light-blue {
+  color: #d8e1ea;
+}
+
+.pantha-footer-bg {
+  background-color: #d8e1ea;
+}
+
+.pantha-black-blue {
+  color: #345a6c
+}
+
+.footerlink {
+  display:inline-block;
+}
+
+.footerlink:after {
+  display: block;
+  content: '';
+  border-bottom: solid 1px oklch(89.7% 0.196 126.665);
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+
+.footerlink:hover:after {
+  transform: scaleX(1);
+}
+
+.footerlink:after {
+  transform-origin: 0 50%;
 }

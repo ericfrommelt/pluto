@@ -1,0 +1,247 @@
+---
+import "../../styles/global.css";
+import Layout from '../../layouts/Pantha.astro';
+import BaseHead from '../../components/BaseHead.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+
+import { Image } from "astro:assets";
+import { Vimeo, YouTube } from 'astro-embed';
+
+
+// dtv
+import dtv01 from '../../assets/brand/dtv/CheckInfo.png';
+import dtv02 from '../../assets/brand/dtv/ChooseYourPackage.png';
+import dtv03 from '../../assets/brand/dtv/ComparePackages.png';
+import dtv04 from '../../assets/brand/dtv/ComparePackages.png';
+import dtv05 from '../../assets/brand/dtv/Confirmation.png';
+import dtv06 from '../../assets/brand/dtv/CreatePassword.png';
+import dtv07 from '../../assets/brand/dtv/LandingPage.png';
+import dtv08 from '../../assets/brand/dtv/UserJourney.png';
+import dtv09 from '../../assets/uxui/ChannelComparison_Enter_Scroll_Exit_4.gif';
+
+// hpe
+import hpe01 from '../../assets/brand/hpe/CloudCliff.png';
+import hpe02 from '../../assets/brand/hpe/CyberCrimeWeb.png';
+import hpe03 from '../../assets/brand/hpe/GenomicBasics_Mobile.png';
+import hpe04 from '../../assets/brand/hpe/GenomicBasics.png';
+import hpe05 from '../../assets/brand/hpe/hpe_css.png';
+import hpe06 from '../../assets/brand/hpe/hpe_header.png';
+import hpe07 from '../../assets/brand/hpe/HPE_SocialTiles.png';
+import hpe08 from '../../assets/brand/hpe/hpe_vscode3.png';
+import hpe09 from '../../assets/brand/hpe/MaturityScape.png';
+import hpe10 from '../../assets/brand/hpe/PrepareHealthcareDelivery.png';
+import hpe11 from '../../assets/motion/cybercrime_motion.gif';
+
+
+// crea dev
+import cd01 from '../../assets/brand/creadev/CreaDev_Badge_Mockup_1.png';
+import cd02 from '../../assets/brand/creadev/CreaDev_Guidelines.png';
+import cd03 from '../../assets/brand/creadev/CreaDev_Poster_Mockup.png';
+import cd04 from '../../assets/brand/creadev/CreaDev_Site_Mockup.png';
+
+// Jackpot
+import jackpot01 from '../../assets/brand/mtv/Jackpot_01.png';
+import jackpot02 from '../../assets/brand/mtv/Jackpot_02.png';
+import jackpot03 from '../../assets/brand/mtv/Jackpot_03.png';
+import jackpot04 from '../../assets/brand/mtv/Jackpot_04.png';
+import jackpot05 from '../../assets/brand/mtv/Jackpot_05.png';
+import jackpot06 from '../../assets/brand/mtv/Jackpot_06.png';
+import jackpot07 from '../../assets/brand/mtv/Jackpot_07.png';
+import jackpot08 from '../../assets/brand/mtv/Jackpot_08.png';
+import jackpot09 from '../../assets/brand/mtv/Jackpot_09.png';
+
+// XLAB
+import xlab01 from '../../assets/brand/xlab/XL-1.png';
+import xlab02 from '../../assets/brand/xlab/XL-2.png';
+import xlab03 from '../../assets/brand/xlab/XL-3.png';
+import xlab04 from '../../assets/brand/xlab/XL-4.png';
+
+// Transformation
+import transformation01 from '../../assets/motion/transformation01-2x.png';
+import transformation02 from '../../assets/motion/transformation02-2x.png';
+import transformation03 from '../../assets/motion/transformation03-2x.png';
+import transformation04 from '../../assets/motion/transformation04-2x.png';
+import transformation05 from '../../assets/motion/transformation05-2x.png';
+import transformation06 from '../../assets/motion/transformation06-2x.png';
+import transformation07 from '../../assets/motion/transformation07-2x.png';
+import transformation08 from '../../assets/motion/transformation08-2x.png';
+import transformation09 from '../../assets/motion/transformation09-2x.png';
+import transformation10 from '../../assets/motion/transformation10-2x.png';
+import transformation11 from '../../assets/motion/transformation11-2x.png';
+import transformation12 from '../../assets/motion/transformation12-2x.png';
+import transformation13 from '../../assets/motion/transformation13-2x.png';
+import transformation14 from '../../assets/motion/transformation14-2x.png'; 
+import transformation15 from '../../assets/motion/transformation15-2x.png';
+import transformation16 from '../../assets/motion/transformation16-2x.png';                     
+import transformation17 from '../../assets/motion/transformation17-2x.png';                
+import transformation18 from '../../assets/motion/transformation18-2x.png';                
+import transformation19 from '../../assets/motion/transformation19-2x.png';                
+import transformation20 from '../../assets/motion/transformation20-2x.png';                
+import transformation21 from '../../assets/motion/transformation21-2x.png';
+
+// Visions for Space
+import spacevision01 from '../../assets/illustration/usc-visions-for-space-01-2x.png';
+import spacevision02 from '../../assets/illustration/usc-visions-for-space-02-2x.png';
+import spacevision03 from '../../assets/illustration/usc-visions-for-space-03-2x.png';
+import spacevision04 from '../../assets/illustration/usc-visions-for-space-04-2x.png';
+import spacevision05 from '../../assets/illustration/vfs-photo.jpg';
+
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Layout>
+			<div class="container mx-auto p-8">
+                <!-- dtv -->
+                <div class="my-32">
+                    <h2 class="text-2xl font-bold my-8">
+                        In app purchase UX/UI + prototyping<br />
+                        <span class="pantha-txt-light">Directv</span>
+                    </h2>
+                    <div class="grid grid-cols-1 gap-8 mb-8">
+                        <Image class="rounded-md" src={dtv07} width="1920" height="1080" alt="dtv landing page"></Image>
+                        <Image class="rounded-md" src={dtv08} width="1920" height="1080" alt="dtv user journey"></Image>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                        <!-- <Image class="rounded-md" src={dtv02} width="1920" height="1080" alt="step 2"></Image>
+                        <Image class="rounded-md" src={dtv04} width="1920" height="1080" alt="step 4"></Image> -->
+                        <Image class="rounded-md" src={dtv09} width="800" height="450" alt="Prototype"></Image>
+                        <Image class="rounded-md" src={dtv01} width="1920" height="1080" alt="step 1"></Image>
+                        <Image class="rounded-md" src={dtv06} width="1920" height="1080" alt="step 6"></Image>
+                        <Image class="rounded-md" src={dtv05} width="1920" height="1080" alt="step 5"></Image>
+                    </div>
+                </div>
+
+				<!-- crea.dev -->
+				<div class="my-32">
+                    <h2 class="text-2xl font-bold my-8">Visual identity for a technology event<br />
+                    <span class="pantha-txt-light">crea.dev</span></h2>
+					<div class="grid grid-cols-1 gap-8 mb-8">
+						<Image class="rounded-md" src={cd04} width="5700" height="4000" alt="crea.dev website mockup"></Image>
+					</div>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                        <Image class="rounded-md" src={cd01} width="2625" height="2625" alt="crea.dev badge mockup"></Image>
+						<Image class="rounded-md" src={cd03} width="3200" height="3200" alt="crea.dev poster mockup"></Image>
+					</div>
+                    <div class="grid grid-cols-1 gap-8 mb-8">
+                        <Image class="rounded-md" src={cd02} width="2300" height="1440" alt="crea.dev brand guidelines"></Image>
+                    </div>
+				 </div>
+				 
+				 <!-- hpe -->
+				 <div class="my-32">
+					 <h2 class="text-2xl font-bold my-8">
+						 Landing pages and social content<br />
+						 <span class="pantha-txt-light">Hewlett Packard Enterprise</span>
+					 </h2>
+					 <div class="grid grid-cols-1 gap-8 mb-8">
+						 <Image class="rounded-md" src={hpe06} width="2676" height="1337" alt="hpe landing page"></Image>
+						 <Image class="rounded-md" src={hpe07} width="2560" height="1440" alt="hpe social tiles"></Image>
+					 </div>
+					 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+						 <div>
+							 <Image class="rounded-md" src={hpe02} width="2560" height="4934" alt="cyber crime"></Image>
+							 <Image class="rounded-md" src={hpe11} width="1920" height="1080" alt="animatic"></Image>
+						 </div>
+						 <Image class="rounded-md" src={hpe01} width="2560" height="7654" alt="cloud cliff"></Image>
+					 </div>
+				 </div>
+
+				<!-- xlab -->
+				<div class="my-32">
+					<h2 class="text-2xl font-bold my-8">
+						Brand explorations including bike paint, dealer catalog, and social concept<br />
+                        <span class="pantha-txt-light">X-Lab</span>
+                    </h2>
+					<div class="grid grid-cols-1 gap-8 mb-8">
+						<Image class="rounded-md" src={xlab01} width="1920" height="1080" alt="01"></Image>
+						<Image class="rounded-md" src={xlab02} width="1920" height="1080" alt="02"></Image>
+						<Image class="rounded-md" src={xlab03} width="1920" height="1080" alt="03"></Image>
+						<Image class="rounded-md" src={xlab04} width="1920" height="1080" alt="04"></Image>
+
+					</div>
+				</div>
+
+
+                <!-- Transformation -->
+                <div class="my-32">
+                    <h2 class="text-2xl font-bold my-8">Transformation explainer video<br />
+                        <span class="pantha-txt-light">Digitas</span></h2>
+                    <div class="grid grid-cols-1 gap-8 mb-8">
+                        <Vimeo id="https://vimeo.com/283314295?fl=tl&fe=ec">
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                        <Image class="rounded-md" src={transformation01} width="3840" height="2160" alt="design frame"></Image>
+                        <Image class="rounded-md" src={transformation02} width="3840" height="2160" alt="design frame"></Image>
+                        <Image class="rounded-md" src={transformation03} width="3840" height="2160" alt="design frame"></Image>
+                        <Image class="rounded-md" src={transformation04} width="3840" height="2160" alt="design frame"></Image>
+                        <Image class="rounded-md" src={transformation05} width="3840" height="2160" alt="design frame"></Image>
+                        <Image class="rounded-md" src={transformation06} width="3840" height="2160" alt="design frame"></Image>
+                        <Image class="rounded-md" src={transformation07} width="3840" height="2160" alt="design frame"></Image>
+                        <Image class="rounded-md" src={transformation08} width="3840" height="2160" alt="design frame"></Image>
+                        <Image class="rounded-md" src={transformation09} width="3840" height="2160" alt="design frame"></Image>
+                        <Image class="rounded-md" src={transformation10} width="3840" height="2160" alt="design frame"></Image>
+                        <Image class="rounded-md" src={transformation11} width="3840" height="2160" alt="design frame"></Image>
+                        <Image class="rounded-md" src={transformation12} width="3840" height="2160" alt="design frame"></Image>
+                        <Image class="rounded-md" src={transformation13} width="3840" height="2160" alt="design frame"></Image>
+                        <Image class="rounded-md" src={transformation14} width="3840" height="2160" alt="design frame"></Image>
+                        <Image class="rounded-md" src={transformation15} width="3840" height="2160" alt="design frame"></Image>
+                        <Image class="rounded-md" src={transformation16} width="3840" height="2160" alt="design frame"></Image>
+                        <Image class="rounded-md" src={transformation17} width="3840" height="2160" alt="design frame"></Image>
+                        <Image class="rounded-md" src={transformation18} width="3840" height="2160" alt="design frame"></Image>
+                        <Image class="rounded-md" src={transformation19} width="3840" height="2160" alt="design frame"></Image>
+                        <Image class="rounded-md" src={transformation20} width="3840" height="2160" alt="design frame"></Image>
+                        <Image class="rounded-md" src={transformation21} width="3840" height="2160" alt="design frame"></Image>
+                    </div>
+                </div>
+
+				<!-- mtv -->
+				<div class="my-32">
+					<h2 class="text-2xl font-bold my-8">
+						Book design<br />
+						<span class="pantha-txt-light">MTV Press</span>
+                    </h2>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+						<Image class="rounded-md" src={jackpot01} width="1170" height="777" alt="jackpot"></Image>
+						<Image class="rounded-md" src={jackpot02} width="1170" height="777" alt="by Kevin Landers"></Image>
+					</div>
+					<div class="grid grid-cols-1 gap-8 mb-8">
+						<Image class="rounded-md" src={jackpot03} width="1170" height="777" alt="spread"></Image>
+						<Image class="rounded-md" src={jackpot04} width="1170" height="777" alt="spread"></Image>
+					</div>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+						<Image class="rounded-md" src={jackpot05} width="1170" height="777" alt="spread"></Image>
+						<Image class="rounded-md" src={jackpot06} width="1170" height="777" alt="spread"></Image>
+						<Image class="rounded-md" src={jackpot07} width="1170" height="777" alt="spread"></Image>
+						<Image class="rounded-md" src={jackpot08} width="1170" height="777" alt="spread"></Image>
+						<Image class="rounded-md" src={jackpot09} width="1170" height="777" alt="spread"></Image>
+					</div>
+				</div>
+                
+                <!-- Visions for Space -->
+				<div class="my-32">
+					<h2 class="text-2xl font-bold my-8">
+						Visions for Space<br />
+						<span class="pantha-txt-light">USC Viterbi School of Engineering</span>
+                    </h2>
+                    <div class="grid grid-cols-1 mb-8">
+                        <Image class="rounded-md" src={spacevision02} width="2560" height="1759" alt=""></Image>
+                    </div>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                        <Image class="rounded-md" src={spacevision01} width="2560" height="1759" alt=""></Image>
+						<Image class="rounded-md" src={spacevision03} width="2560" height="1759" alt=""></Image>
+					</div>
+                    <div class="grid grid-cols-1 mb-8">
+                        <Image class="rounded-md" src={spacevision04} width="2560" height="1759" alt=""></Image>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 mb-8">
+                        <Image class="rounded-md" src={spacevision05} width="1000" height="667" alt=""></Image>
+                    </div>
+				</div>
+			</Layout>
+	</body>
+</html>
